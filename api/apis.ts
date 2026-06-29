@@ -1,0 +1,86 @@
+export * from './accountApi';
+import { AccountApi } from './accountApi';
+export * from './accountRechargeApi';
+import { AccountRechargeApi } from './accountRechargeApi';
+export * from './contactApi';
+import { ContactApi } from './contactApi';
+export * from './contactListApi';
+import { ContactListApi } from './contactListApi';
+export * from './countriesApi';
+import { CountriesApi } from './countriesApi';
+export * from './deliveryIssuesApi';
+import { DeliveryIssuesApi } from './deliveryIssuesApi';
+export * from './detectAddressApi';
+import { DetectAddressApi } from './detectAddressApi';
+export * from './emailDeliveryReceiptRulesApi';
+import { EmailDeliveryReceiptRulesApi } from './emailDeliveryReceiptRulesApi';
+export * from './emailMarketingApi';
+import { EmailMarketingApi } from './emailMarketingApi';
+export * from './emailToSmsApi';
+import { EmailToSmsApi } from './emailToSmsApi';
+export * from './fAXApi';
+import { FAXApi } from './fAXApi';
+export * from './fAXDeliveryReceiptRulesApi';
+import { FAXDeliveryReceiptRulesApi } from './fAXDeliveryReceiptRulesApi';
+export * from './globalSendingApi';
+import { GlobalSendingApi } from './globalSendingApi';
+export * from './inboundFAXRulesApi';
+import { InboundFAXRulesApi } from './inboundFAXRulesApi';
+export * from './inboundSMSRulesApi';
+import { InboundSMSRulesApi } from './inboundSMSRulesApi';
+export * from './mMSApi';
+import { MMSApi } from './mMSApi';
+export * from './masterEmailTemplatesApi';
+import { MasterEmailTemplatesApi } from './masterEmailTemplatesApi';
+export * from './mmsCampaignApi';
+import { MmsCampaignApi } from './mmsCampaignApi';
+export * from './numberApi';
+import { NumberApi } from './numberApi';
+export * from './postLetterApi';
+import { PostLetterApi } from './postLetterApi';
+export * from './postPostcardApi';
+import { PostPostcardApi } from './postPostcardApi';
+export * from './postReturnAddressApi';
+import { PostReturnAddressApi } from './postReturnAddressApi';
+export * from './referralAccountApi';
+import { ReferralAccountApi } from './referralAccountApi';
+export * from './resellerAccountApi';
+import { ResellerAccountApi } from './resellerAccountApi';
+export * from './sMSApi';
+import { SMSApi } from './sMSApi';
+export * from './sMSDeliveryReceiptRulesApi';
+import { SMSDeliveryReceiptRulesApi } from './sMSDeliveryReceiptRulesApi';
+export * from './searchApi';
+import { SearchApi } from './searchApi';
+export * from './smsCampaignApi';
+import { SmsCampaignApi } from './smsCampaignApi';
+export * from './statisticsApi';
+import { StatisticsApi } from './statisticsApi';
+export * from './subaccountApi';
+import { SubaccountApi } from './subaccountApi';
+export * from './timezonesApi';
+import { TimezonesApi } from './timezonesApi';
+export * from './transactionalEmailApi';
+import { TransactionalEmailApi } from './transactionalEmailApi';
+export * from './transferCreditApi';
+import { TransferCreditApi } from './transferCreditApi';
+export * from './uploadApi';
+import { UploadApi } from './uploadApi';
+export * from './userEmailTemplatesApi';
+import { UserEmailTemplatesApi } from './userEmailTemplatesApi';
+export * from './voiceApi';
+import { VoiceApi } from './voiceApi';
+export * from './voiceDeliveryReceiptRulesApi';
+import { VoiceDeliveryReceiptRulesApi } from './voiceDeliveryReceiptRulesApi';
+import * as http from 'http';
+
+export class HttpError extends Error {
+    constructor (public response: http.IncomingMessage, public body: any, public statusCode?: number) {
+        super('HTTP request failed');
+        this.name = 'HttpError';
+    }
+}
+
+export { RequestFile } from '../model/models';
+
+export const APIS = [AccountApi, AccountRechargeApi, ContactApi, ContactListApi, CountriesApi, DeliveryIssuesApi, DetectAddressApi, EmailDeliveryReceiptRulesApi, EmailMarketingApi, EmailToSmsApi, FAXApi, FAXDeliveryReceiptRulesApi, GlobalSendingApi, InboundFAXRulesApi, InboundSMSRulesApi, MMSApi, MasterEmailTemplatesApi, MmsCampaignApi, NumberApi, PostLetterApi, PostPostcardApi, PostReturnAddressApi, ReferralAccountApi, ResellerAccountApi, SMSApi, SMSDeliveryReceiptRulesApi, SearchApi, SmsCampaignApi, StatisticsApi, SubaccountApi, TimezonesApi, TransactionalEmailApi, TransferCreditApi, UploadApi, UserEmailTemplatesApi, VoiceApi, VoiceDeliveryReceiptRulesApi];
