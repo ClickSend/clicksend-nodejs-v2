@@ -1,6 +1,6 @@
 {
     "name": "clicksend",
-    "version": "1.0.0",
+    "version": "6.0.0",
     "description": "NodeJS client for clicksend",
     "repository": {
         "type": "git",
