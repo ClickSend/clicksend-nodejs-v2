@@ -11,78 +11,94 @@
  */
 
 import { RequestFile } from './models';
+import { Subaccount } from './subaccount';
 
-export class ViewAvailableNumbersDataInner {
+export class ViewSubaccountsData {
     /**
-    * The country code of the number.
+    * The total number of items available for viewing.
     */
-    'country'?: string;
+    'total'?: number;
     /**
-    * The country name of the number.
+    * The number of items returned per page. This is specified in the limit parameter. You can have 100 items at maximum, and 15 at minimum.
     */
-    'countryName'?: string;
+    'perPage'?: number;
     /**
-    * The dedicated number.
+    * The current page number.
     */
-    'dedicatedNumber'?: string;
+    'currentPage'?: number;
     /**
-    * The setup price of the number.
+    * The last page number.
     */
-    'priceSetup'?: string;
+    'lastPage'?: number;
     /**
-    * The monthly price of the number.
+    * A URL of the next page. It will return **null** if there’s no next page.
     */
-    'priceMonthly'?: string;
+    'nextPageUrl'?: string | null;
     /**
-    * The total price of the number.
+    * A URL of the previous page. It will return **null** if there’s no previous page.
     */
-    'priceTotal'?: string;
+    'prevPageUrl'?: string | null;
     /**
-    * The address requirement for the number.  <br> `local`: requires an address that corresponds  to the phone number\'s prefix.
+    * The number of the first result in the current page.
     */
-    'addressRequirement'?: string | null;
+    'from'?: number;
+    /**
+    * The number of the last result in the current page.
+    */
+    'to'?: number;
+    'data'?: Array<Subaccount>;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "country",
-            "baseName": "country",
+            "name": "total",
+            "baseName": "total",
+            "type": "number"
+        },
+        {
+            "name": "perPage",
+            "baseName": "per_page",
+            "type": "number"
+        },
+        {
+            "name": "currentPage",
+            "baseName": "current_page",
+            "type": "number"
+        },
+        {
+            "name": "lastPage",
+            "baseName": "last_page",
+            "type": "number"
+        },
+        {
+            "name": "nextPageUrl",
+            "baseName": "next_page_url",
             "type": "string"
         },
         {
-            "name": "countryName",
-            "baseName": "country_name",
+            "name": "prevPageUrl",
+            "baseName": "prev_page_url",
             "type": "string"
         },
         {
-            "name": "dedicatedNumber",
-            "baseName": "dedicated_number",
-            "type": "string"
+            "name": "from",
+            "baseName": "from",
+            "type": "number"
         },
         {
-            "name": "priceSetup",
-            "baseName": "price_setup",
-            "type": "string"
+            "name": "to",
+            "baseName": "to",
+            "type": "number"
         },
         {
-            "name": "priceMonthly",
-            "baseName": "price_monthly",
-            "type": "string"
-        },
-        {
-            "name": "priceTotal",
-            "baseName": "price_total",
-            "type": "string"
-        },
-        {
-            "name": "addressRequirement",
-            "baseName": "address_requirement",
-            "type": "string"
+            "name": "data",
+            "baseName": "data",
+            "type": "Array<Subaccount>"
         }    ];
 
     static getAttributeTypeMap() {
-        return ViewAvailableNumbersDataInner.attributeTypeMap;
+        return ViewSubaccountsData.attributeTypeMap;
     }
 }
 

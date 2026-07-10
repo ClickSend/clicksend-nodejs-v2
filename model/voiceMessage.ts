@@ -44,7 +44,7 @@ export class VoiceMessage {
     /**
     * The timestamp when the message should be sent.
     */
-    'schedule'?: number;
+    'schedule'?: string;
     /**
     * The ID of the message.
     */
@@ -52,11 +52,11 @@ export class VoiceMessage {
     /**
     * The number of parts in the message.
     */
-    'messageParts'?: number;
+    'messageParts'?: string;
     /**
     * The price of the message.
     */
-    'messagePrice'?: number;
+    'messagePrice'?: string;
     /**
     * The custom string of the message.
     */
@@ -127,7 +127,7 @@ export class VoiceMessage {
         {
             "name": "schedule",
             "baseName": "schedule",
-            "type": "number"
+            "type": "string"
         },
         {
             "name": "messageId",
@@ -137,12 +137,12 @@ export class VoiceMessage {
         {
             "name": "messageParts",
             "baseName": "message_parts",
-            "type": "number"
+            "type": "string"
         },
         {
             "name": "messagePrice",
             "baseName": "message_price",
-            "type": "number"
+            "type": "string"
         },
         {
             "name": "customString",

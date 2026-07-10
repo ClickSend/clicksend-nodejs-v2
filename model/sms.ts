@@ -32,7 +32,7 @@ export class Sms {
     /**
     * The scheduled date of the message. It is in <a href=\"http://help.clicksend.com/what-is-a-unix-timestamp\" target=\"_blank\">Unix format</a>.
     */
-    'schedule'?: number;
+    'schedule'?: string;
     /**
     * The generated ID of the message. This ID is typically used as a reference for <a href=\"https://www.clicksend.com/au/help/\" target=\"_blank\">customer support</a> in case of any issues.
     */
@@ -44,7 +44,7 @@ export class Sms {
     /**
     * The price of this message. This depends on the total number of parts of the message.
     */
-    'messagePrice'?: number;
+    'messagePrice'?: string;
     /**
     * A note that was sent from the request.
     */
@@ -92,7 +92,7 @@ export class Sms {
         {
             "name": "schedule",
             "baseName": "schedule",
-            "type": "number"
+            "type": "string"
         },
         {
             "name": "messageId",
@@ -107,7 +107,7 @@ export class Sms {
         {
             "name": "messagePrice",
             "baseName": "message_price",
-            "type": "number"
+            "type": "string"
         },
         {
             "name": "customString",

@@ -21,7 +21,10 @@ export class ViewVoiceLanguagesDataInner {
     * The country of the language.
     */
     'country'?: string;
-    'gender'?: Array<string>;
+    /**
+    * The gender of the language.
+    */
+    'gender'?: string;
 
     static discriminator: string | undefined = undefined;
 
@@ -39,7 +42,7 @@ export class ViewVoiceLanguagesDataInner {
         {
             "name": "gender",
             "baseName": "gender",
-            "type": "Array<string>"
+            "type": "string"
         }    ];
 
     static getAttributeTypeMap() {

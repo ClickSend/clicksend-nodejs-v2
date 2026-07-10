@@ -11,44 +11,33 @@
  */
 
 import { RequestFile } from './models';
-import { CancelAllSmsData } from './cancelAllSmsData';
-import { ViewVoiceStatisticsDataTotalOutbound } from './viewVoiceStatisticsDataTotalOutbound';
 
-export class ViewSmsStatisticsDataStatInner {
+export class ViewAccountUsageDataEmailTotal {
     /**
-    * The date.
+    * The total count of emails.
     */
-    'date'?: number;
-    'outbound'?: ViewVoiceStatisticsDataTotalOutbound;
-    'inbound'?: CancelAllSmsData;
-    'bounced'?: CancelAllSmsData;
+    'count'?: number;
+    /**
+    * The total price of emails.
+    */
+    'price'?: string;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "date",
-            "baseName": "date",
+            "name": "count",
+            "baseName": "count",
             "type": "number"
         },
         {
-            "name": "outbound",
-            "baseName": "outbound",
-            "type": "ViewVoiceStatisticsDataTotalOutbound"
-        },
-        {
-            "name": "inbound",
-            "baseName": "inbound",
-            "type": "CancelAllSmsData"
-        },
-        {
-            "name": "bounced",
-            "baseName": "bounced",
-            "type": "CancelAllSmsData"
+            "name": "price",
+            "baseName": "price",
+            "type": "string"
         }    ];
 
     static getAttributeTypeMap() {
-        return ViewSmsStatisticsDataStatInner.attributeTypeMap;
+        return ViewAccountUsageDataEmailTotal.attributeTypeMap;
     }
 }
 

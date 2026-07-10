@@ -11,7 +11,7 @@
  */
 
 import { RequestFile } from './models';
-import { Contact } from './contact';
+import { ViewListContactsData } from './viewListContactsData';
 
 export class ViewListContacts {
     /**
@@ -26,7 +26,7 @@ export class ViewListContacts {
     * A message describing the outcome of the operation.
     */
     'responseMsg'?: string;
-    'data'?: Array<Contact>;
+    'data'?: ViewListContactsData;
 
     static discriminator: string | undefined = undefined;
 
@@ -49,7 +49,7 @@ export class ViewListContacts {
         {
             "name": "data",
             "baseName": "data",
-            "type": "Array<Contact>"
+            "type": "ViewListContactsData"
         }    ];
 
     static getAttributeTypeMap() {

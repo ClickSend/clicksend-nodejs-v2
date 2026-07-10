@@ -12,14 +12,14 @@
 
 import { RequestFile } from './models';
 import { CancelAllSmsData } from './cancelAllSmsData';
-import { ViewVoiceStatisticsDataStatsInnerOutbound } from './viewVoiceStatisticsDataStatsInnerOutbound';
+import { ViewVoiceStatisticsDataTotalOutbound } from './viewVoiceStatisticsDataTotalOutbound';
 
 export class ViewVoiceStatisticsDataStatsInner {
     /**
     * The date.
     */
     'date'?: number;
-    'outbound'?: ViewVoiceStatisticsDataStatsInnerOutbound;
+    'outbound'?: ViewVoiceStatisticsDataTotalOutbound;
     'bounced'?: CancelAllSmsData;
 
     static discriminator: string | undefined = undefined;
@@ -33,7 +33,7 @@ export class ViewVoiceStatisticsDataStatsInner {
         {
             "name": "outbound",
             "baseName": "outbound",
-            "type": "ViewVoiceStatisticsDataStatsInnerOutbound"
+            "type": "ViewVoiceStatisticsDataTotalOutbound"
         },
         {
             "name": "bounced",

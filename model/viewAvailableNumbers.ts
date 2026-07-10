@@ -12,7 +12,7 @@
 
 import { RequestFile } from './models';
 import { Currency } from './currency';
-import { ViewAvailableNumbersDataInner } from './viewAvailableNumbersDataInner';
+import { ViewAvailableNumbersData } from './viewAvailableNumbersData';
 
 export class ViewAvailableNumbers {
     /**
@@ -27,7 +27,7 @@ export class ViewAvailableNumbers {
     * A message describing the outcome of the operation.
     */
     'responseMsg'?: string;
-    'data'?: Array<ViewAvailableNumbersDataInner>;
+    'data'?: ViewAvailableNumbersData;
     'currency'?: Currency;
 
     static discriminator: string | undefined = undefined;
@@ -51,7 +51,7 @@ export class ViewAvailableNumbers {
         {
             "name": "data",
             "baseName": "data",
-            "type": "Array<ViewAvailableNumbersDataInner>"
+            "type": "ViewAvailableNumbersData"
         },
         {
             "name": "currency",

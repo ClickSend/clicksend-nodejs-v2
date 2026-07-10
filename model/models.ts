@@ -310,8 +310,10 @@ export * from './viewAccountDetails';
 export * from './viewAccountUsage';
 export * from './viewAccountUsageData';
 export * from './viewAccountUsageDataEmailInner';
+export * from './viewAccountUsageDataEmailTotal';
 export * from './viewAccountUsageDataSmsInner';
 export * from './viewAccountUsageDataSmsTotal';
+export * from './viewAccountUsageDataVoiceInner';
 export * from './viewAllEmailCampaigns';
 export * from './viewAllEmailCampaignsData';
 export * from './viewAllMmsCampaigns';
@@ -325,7 +327,8 @@ export * from './viewAllowedEmailAddressesData';
 export * from './viewAllowedEmails';
 export * from './viewAllowedEmailsDataInner';
 export * from './viewAvailableNumbers';
-export * from './viewAvailableNumbersDataInner';
+export * from './viewAvailableNumbersData';
+export * from './viewAvailableNumbersDataAllOfDataInner';
 export * from './viewClientAccounts';
 export * from './viewClientAccountsData';
 export * from './viewCountries';
@@ -355,6 +358,7 @@ export * from './viewInboundSmsData';
 export * from './viewLetterHistory';
 export * from './viewLetterHistoryData';
 export * from './viewListContacts';
+export * from './viewListContactsData';
 export * from './viewLists';
 export * from './viewListsData';
 export * from './viewMasterEmailTemplate';
@@ -404,6 +408,7 @@ export * from './viewStrippedStringRules';
 export * from './viewStrippedStringRulesData';
 export * from './viewStrippedStringRulesDataDataInner';
 export * from './viewSubaccounts';
+export * from './viewSubaccountsData';
 export * from './viewTemplateCategories';
 export * from './viewTemplateCategoriesDataInner';
 export * from './viewTemplateCategory';
@@ -419,7 +424,6 @@ export * from './viewVoiceReceiptsData';
 export * from './viewVoiceStatistics';
 export * from './viewVoiceStatisticsData';
 export * from './viewVoiceStatisticsDataStatsInner';
-export * from './viewVoiceStatisticsDataStatsInnerOutbound';
 export * from './viewVoiceStatisticsDataTotal';
 export * from './viewVoiceStatisticsDataTotalOutbound';
 export * from './viewYourNumbers';
@@ -755,8 +759,10 @@ import { ViewAccountDetails } from './viewAccountDetails';
 import { ViewAccountUsage } from './viewAccountUsage';
 import { ViewAccountUsageData } from './viewAccountUsageData';
 import { ViewAccountUsageDataEmailInner } from './viewAccountUsageDataEmailInner';
+import { ViewAccountUsageDataEmailTotal } from './viewAccountUsageDataEmailTotal';
 import { ViewAccountUsageDataSmsInner } from './viewAccountUsageDataSmsInner';
 import { ViewAccountUsageDataSmsTotal } from './viewAccountUsageDataSmsTotal';
+import { ViewAccountUsageDataVoiceInner } from './viewAccountUsageDataVoiceInner';
 import { ViewAllEmailCampaigns } from './viewAllEmailCampaigns';
 import { ViewAllEmailCampaignsData } from './viewAllEmailCampaignsData';
 import { ViewAllMmsCampaigns } from './viewAllMmsCampaigns';
@@ -770,7 +776,8 @@ import { ViewAllowedEmailAddressesData } from './viewAllowedEmailAddressesData';
 import { ViewAllowedEmails } from './viewAllowedEmails';
 import { ViewAllowedEmailsDataInner } from './viewAllowedEmailsDataInner';
 import { ViewAvailableNumbers } from './viewAvailableNumbers';
-import { ViewAvailableNumbersDataInner } from './viewAvailableNumbersDataInner';
+import { ViewAvailableNumbersData } from './viewAvailableNumbersData';
+import { ViewAvailableNumbersDataAllOfDataInner } from './viewAvailableNumbersDataAllOfDataInner';
 import { ViewClientAccounts } from './viewClientAccounts';
 import { ViewClientAccountsData } from './viewClientAccountsData';
 import { ViewCountries } from './viewCountries';
@@ -800,6 +807,7 @@ import { ViewInboundSmsData } from './viewInboundSmsData';
 import { ViewLetterHistory } from './viewLetterHistory';
 import { ViewLetterHistoryData } from './viewLetterHistoryData';
 import { ViewListContacts } from './viewListContacts';
+import { ViewListContactsData } from './viewListContactsData';
 import { ViewLists } from './viewLists';
 import { ViewListsData } from './viewListsData';
 import { ViewMasterEmailTemplate } from './viewMasterEmailTemplate';
@@ -849,6 +857,7 @@ import { ViewStrippedStringRules } from './viewStrippedStringRules';
 import { ViewStrippedStringRulesData } from './viewStrippedStringRulesData';
 import { ViewStrippedStringRulesDataDataInner } from './viewStrippedStringRulesDataDataInner';
 import { ViewSubaccounts } from './viewSubaccounts';
+import { ViewSubaccountsData } from './viewSubaccountsData';
 import { ViewTemplateCategories } from './viewTemplateCategories';
 import { ViewTemplateCategoriesDataInner } from './viewTemplateCategoriesDataInner';
 import { ViewTemplateCategory } from './viewTemplateCategory';
@@ -864,7 +873,6 @@ import { ViewVoiceReceiptsData } from './viewVoiceReceiptsData';
 import { ViewVoiceStatistics } from './viewVoiceStatistics';
 import { ViewVoiceStatisticsData } from './viewVoiceStatisticsData';
 import { ViewVoiceStatisticsDataStatsInner } from './viewVoiceStatisticsDataStatsInner';
-import { ViewVoiceStatisticsDataStatsInnerOutbound } from './viewVoiceStatisticsDataStatsInnerOutbound';
 import { ViewVoiceStatisticsDataTotal } from './viewVoiceStatisticsDataTotal';
 import { ViewVoiceStatisticsDataTotalOutbound } from './viewVoiceStatisticsDataTotalOutbound';
 import { ViewYourNumbers } from './viewYourNumbers';
@@ -1218,8 +1226,10 @@ let typeMap: {[index: string]: any} = {
     "ViewAccountUsage": ViewAccountUsage,
     "ViewAccountUsageData": ViewAccountUsageData,
     "ViewAccountUsageDataEmailInner": ViewAccountUsageDataEmailInner,
+    "ViewAccountUsageDataEmailTotal": ViewAccountUsageDataEmailTotal,
     "ViewAccountUsageDataSmsInner": ViewAccountUsageDataSmsInner,
     "ViewAccountUsageDataSmsTotal": ViewAccountUsageDataSmsTotal,
+    "ViewAccountUsageDataVoiceInner": ViewAccountUsageDataVoiceInner,
     "ViewAllEmailCampaigns": ViewAllEmailCampaigns,
     "ViewAllEmailCampaignsData": ViewAllEmailCampaignsData,
     "ViewAllMmsCampaigns": ViewAllMmsCampaigns,
@@ -1233,7 +1243,8 @@ let typeMap: {[index: string]: any} = {
     "ViewAllowedEmails": ViewAllowedEmails,
     "ViewAllowedEmailsDataInner": ViewAllowedEmailsDataInner,
     "ViewAvailableNumbers": ViewAvailableNumbers,
-    "ViewAvailableNumbersDataInner": ViewAvailableNumbersDataInner,
+    "ViewAvailableNumbersData": ViewAvailableNumbersData,
+    "ViewAvailableNumbersDataAllOfDataInner": ViewAvailableNumbersDataAllOfDataInner,
     "ViewClientAccounts": ViewClientAccounts,
     "ViewClientAccountsData": ViewClientAccountsData,
     "ViewCountries": ViewCountries,
@@ -1263,6 +1274,7 @@ let typeMap: {[index: string]: any} = {
     "ViewLetterHistory": ViewLetterHistory,
     "ViewLetterHistoryData": ViewLetterHistoryData,
     "ViewListContacts": ViewListContacts,
+    "ViewListContactsData": ViewListContactsData,
     "ViewLists": ViewLists,
     "ViewListsData": ViewListsData,
     "ViewMasterEmailTemplate": ViewMasterEmailTemplate,
@@ -1312,6 +1324,7 @@ let typeMap: {[index: string]: any} = {
     "ViewStrippedStringRulesData": ViewStrippedStringRulesData,
     "ViewStrippedStringRulesDataDataInner": ViewStrippedStringRulesDataDataInner,
     "ViewSubaccounts": ViewSubaccounts,
+    "ViewSubaccountsData": ViewSubaccountsData,
     "ViewTemplateCategories": ViewTemplateCategories,
     "ViewTemplateCategoriesDataInner": ViewTemplateCategoriesDataInner,
     "ViewTemplateCategory": ViewTemplateCategory,
@@ -1327,7 +1340,6 @@ let typeMap: {[index: string]: any} = {
     "ViewVoiceStatistics": ViewVoiceStatistics,
     "ViewVoiceStatisticsData": ViewVoiceStatisticsData,
     "ViewVoiceStatisticsDataStatsInner": ViewVoiceStatisticsDataStatsInner,
-    "ViewVoiceStatisticsDataStatsInnerOutbound": ViewVoiceStatisticsDataStatsInnerOutbound,
     "ViewVoiceStatisticsDataTotal": ViewVoiceStatisticsDataTotal,
     "ViewVoiceStatisticsDataTotalOutbound": ViewVoiceStatisticsDataTotalOutbound,
     "ViewYourNumbers": ViewYourNumbers,

@@ -12,21 +12,22 @@
 
 import { RequestFile } from './models';
 import { ViewAccountUsageDataEmailInner } from './viewAccountUsageDataEmailInner';
+import { ViewAccountUsageDataEmailTotal } from './viewAccountUsageDataEmailTotal';
 import { ViewAccountUsageDataSmsInner } from './viewAccountUsageDataSmsInner';
 import { ViewAccountUsageDataSmsTotal } from './viewAccountUsageDataSmsTotal';
-import { ViewVoiceStatisticsDataTotalOutbound } from './viewVoiceStatisticsDataTotalOutbound';
+import { ViewAccountUsageDataVoiceInner } from './viewAccountUsageDataVoiceInner';
 
 export class ViewAccountUsageData {
     'sms'?: Array<ViewAccountUsageDataSmsInner>;
-    'voice'?: Array<ViewAccountUsageDataSmsInner>;
-    'fax'?: Array<ViewAccountUsageDataSmsInner>;
-    'post'?: Array<ViewAccountUsageDataSmsInner>;
+    'voice'?: Array<ViewAccountUsageDataVoiceInner>;
+    'fax'?: Array<ViewAccountUsageDataVoiceInner>;
+    'post'?: Array<ViewAccountUsageDataVoiceInner>;
     'email'?: Array<ViewAccountUsageDataEmailInner>;
     'smsTotal'?: ViewAccountUsageDataSmsTotal;
     'voiceTotal'?: ViewAccountUsageDataSmsTotal;
     'faxTotal'?: ViewAccountUsageDataSmsTotal;
     'postTotal'?: ViewAccountUsageDataSmsTotal;
-    'emailTotal'?: ViewVoiceStatisticsDataTotalOutbound;
+    'emailTotal'?: ViewAccountUsageDataEmailTotal;
 
     static discriminator: string | undefined = undefined;
 
@@ -39,17 +40,17 @@ export class ViewAccountUsageData {
         {
             "name": "voice",
             "baseName": "voice",
-            "type": "Array<ViewAccountUsageDataSmsInner>"
+            "type": "Array<ViewAccountUsageDataVoiceInner>"
         },
         {
             "name": "fax",
             "baseName": "fax",
-            "type": "Array<ViewAccountUsageDataSmsInner>"
+            "type": "Array<ViewAccountUsageDataVoiceInner>"
         },
         {
             "name": "post",
             "baseName": "post",
-            "type": "Array<ViewAccountUsageDataSmsInner>"
+            "type": "Array<ViewAccountUsageDataVoiceInner>"
         },
         {
             "name": "email",
@@ -79,7 +80,7 @@ export class ViewAccountUsageData {
         {
             "name": "emailTotal",
             "baseName": "email_total",
-            "type": "ViewVoiceStatisticsDataTotalOutbound"
+            "type": "ViewAccountUsageDataEmailTotal"
         }    ];
 
     static getAttributeTypeMap() {

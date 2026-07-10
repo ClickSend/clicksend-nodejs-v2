@@ -40,11 +40,11 @@ export class ViewSmsHistoryDataAllOfDataInner {
     /**
     * The scheduled date of the message. It is in <a href=\"http://help.clicksend.com/what-is-a-unix-timestamp\" target=\"_blank\">Unix format</a>.
     */
-    'schedule'?: number;
+    'schedule'?: string;
     /**
     * The status code sent from the <a href=\"https://en.wikipedia.org/wiki/SMS_gateway\" target=\"_blank\">SMS gateway</a>. Visit <a href=\"https://help.clicksend.com/article/8cc479qlbb-list-of-sms-gateway-error-codes\" target=\"_blank\">this page</a> for more information.
     */
-    'statusCode'?: number;
+    'statusCode'?: string;
     /**
     * A message describing the _status_code_ of the operation. Visit <a href=\"https://help.clicksend.com/article/8cc479qlbb-list-of-sms-gateway-error-codes\" target=\"_blank\">this page</a> for more information.
     */
@@ -52,7 +52,7 @@ export class ViewSmsHistoryDataAllOfDataInner {
     /**
     * The error code of the operation. Visit <a href=\"https://help.clicksend.com/article/8cc479qlbb-list-of-sms-gateway-error-codes\" target=\"_blank\">this page</a> for more information. If no error occurred, the value is **null**.
     */
-    'errorCode'?: number | null;
+    'errorCode'?: string | null;
     /**
     * A message describing the _error_code_ of the operation. Visit <a href=\"https://help.clicksend.com/article/8cc479qlbb-list-of-sms-gateway-error-codes\" target=\"_blank\">this page</a> for more information. If no error occurred, the value is **null**.
     */
@@ -60,15 +60,15 @@ export class ViewSmsHistoryDataAllOfDataInner {
     /**
     * The generated ID of the message.
     */
-    'messageId'?: number;
+    'messageId'?: string;
     /**
     * The number of parts the message was broken into. To look at how many parts your message is broken down into, use the <a href=\"http://smscharactercount.com/\" target=\"_blank\"><strong>SMS Character Count</strong></a>.
     */
-    'messageParts'?: number;
+    'messageParts'?: string;
     /**
     * The price of this message. This depends on the total number of parts of the message.
     */
-    'messagePrice'?: number;
+    'messagePrice'?: string;
     /**
     * The email address to which replies should be emailed to. If omitted, the reply will be emailed back to the user who sent the outgoing SMS
     */
@@ -150,12 +150,12 @@ export class ViewSmsHistoryDataAllOfDataInner {
         {
             "name": "schedule",
             "baseName": "schedule",
-            "type": "number"
+            "type": "string"
         },
         {
             "name": "statusCode",
             "baseName": "status_code",
-            "type": "number"
+            "type": "string"
         },
         {
             "name": "statusText",
@@ -165,7 +165,7 @@ export class ViewSmsHistoryDataAllOfDataInner {
         {
             "name": "errorCode",
             "baseName": "error_code",
-            "type": "number"
+            "type": "string"
         },
         {
             "name": "errorText",
@@ -175,17 +175,17 @@ export class ViewSmsHistoryDataAllOfDataInner {
         {
             "name": "messageId",
             "baseName": "message_id",
-            "type": "number"
+            "type": "string"
         },
         {
             "name": "messageParts",
             "baseName": "message_parts",
-            "type": "number"
+            "type": "string"
         },
         {
             "name": "messagePrice",
             "baseName": "message_price",
-            "type": "number"
+            "type": "string"
         },
         {
             "name": "fromEmail",

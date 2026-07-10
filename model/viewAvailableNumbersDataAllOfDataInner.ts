@@ -11,44 +11,78 @@
  */
 
 import { RequestFile } from './models';
-import { CancelAllSmsData } from './cancelAllSmsData';
-import { ViewVoiceStatisticsDataTotalOutbound } from './viewVoiceStatisticsDataTotalOutbound';
 
-export class ViewSmsStatisticsDataStatInner {
+export class ViewAvailableNumbersDataAllOfDataInner {
     /**
-    * The date.
+    * The country code of the number.
     */
-    'date'?: number;
-    'outbound'?: ViewVoiceStatisticsDataTotalOutbound;
-    'inbound'?: CancelAllSmsData;
-    'bounced'?: CancelAllSmsData;
+    'country'?: string;
+    /**
+    * The country name of the number.
+    */
+    'countryName'?: string;
+    /**
+    * The dedicated number.
+    */
+    'dedicatedNumber'?: string;
+    /**
+    * The setup price of the number.
+    */
+    'priceSetup'?: string;
+    /**
+    * The monthly price of the number.
+    */
+    'priceMonthly'?: string;
+    /**
+    * The total price of the number.
+    */
+    'priceTotal'?: string;
+    /**
+    * The address requirement for the number.  <br> `local`: requires an address that corresponds  to the phone number\'s prefix.
+    */
+    'addressRequirement'?: string | null;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "date",
-            "baseName": "date",
-            "type": "number"
+            "name": "country",
+            "baseName": "country",
+            "type": "string"
         },
         {
-            "name": "outbound",
-            "baseName": "outbound",
-            "type": "ViewVoiceStatisticsDataTotalOutbound"
+            "name": "countryName",
+            "baseName": "country_name",
+            "type": "string"
         },
         {
-            "name": "inbound",
-            "baseName": "inbound",
-            "type": "CancelAllSmsData"
+            "name": "dedicatedNumber",
+            "baseName": "dedicated_number",
+            "type": "string"
         },
         {
-            "name": "bounced",
-            "baseName": "bounced",
-            "type": "CancelAllSmsData"
+            "name": "priceSetup",
+            "baseName": "price_setup",
+            "type": "string"
+        },
+        {
+            "name": "priceMonthly",
+            "baseName": "price_monthly",
+            "type": "string"
+        },
+        {
+            "name": "priceTotal",
+            "baseName": "price_total",
+            "type": "string"
+        },
+        {
+            "name": "addressRequirement",
+            "baseName": "address_requirement",
+            "type": "string"
         }    ];
 
     static getAttributeTypeMap() {
-        return ViewSmsStatisticsDataStatInner.attributeTypeMap;
+        return ViewAvailableNumbersDataAllOfDataInner.attributeTypeMap;
     }
 }
 

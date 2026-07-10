@@ -12,32 +12,50 @@
 
 import { RequestFile } from './models';
 
-export class ViewVoiceStatisticsDataStatsInnerOutbound {
+export class ViewAccountUsageDataVoiceInner {
     /**
-    * The count of outbound calls.
+    * The subaccount identifier.
     */
-    'count'?: number;
+    'subaccountId'?: number;
     /**
-    * The price of outbound calls.
+    * The username associated with the subaccount.
     */
-    'price'?: number;
+    'username'?: string;
+    /**
+    * The total count of voice calls.
+    */
+    'totalCount'?: string;
+    /**
+    * The total price of voice calls.
+    */
+    'totalPrice'?: string;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "count",
-            "baseName": "count",
+            "name": "subaccountId",
+            "baseName": "subaccount_id",
             "type": "number"
         },
         {
-            "name": "price",
-            "baseName": "price",
-            "type": "number"
+            "name": "username",
+            "baseName": "username",
+            "type": "string"
+        },
+        {
+            "name": "totalCount",
+            "baseName": "total_count",
+            "type": "string"
+        },
+        {
+            "name": "totalPrice",
+            "baseName": "total_price",
+            "type": "string"
         }    ];
 
     static getAttributeTypeMap() {
-        return ViewVoiceStatisticsDataStatsInnerOutbound.attributeTypeMap;
+        return ViewAccountUsageDataVoiceInner.attributeTypeMap;
     }
 }
 

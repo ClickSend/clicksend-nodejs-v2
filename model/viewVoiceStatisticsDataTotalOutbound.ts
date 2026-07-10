@@ -20,7 +20,7 @@ export class ViewVoiceStatisticsDataTotalOutbound {
     /**
     * The total price of outbound calls.
     */
-    'price'?: string;
+    'price'?: number;
 
     static discriminator: string | undefined = undefined;
 
@@ -33,7 +33,7 @@ export class ViewVoiceStatisticsDataTotalOutbound {
         {
             "name": "price",
             "baseName": "price",
-            "type": "string"
+            "type": "number"
         }    ];
 
     static getAttributeTypeMap() {

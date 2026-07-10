@@ -12,10 +12,10 @@
 
 import { RequestFile } from './models';
 import { CancelAllSmsData } from './cancelAllSmsData';
-import { ViewVoiceStatisticsDataStatsInnerOutbound } from './viewVoiceStatisticsDataStatsInnerOutbound';
+import { ViewVoiceStatisticsDataTotalOutbound } from './viewVoiceStatisticsDataTotalOutbound';
 
 export class ViewSmsStatisticsDataTotal {
-    'outbound'?: ViewVoiceStatisticsDataStatsInnerOutbound;
+    'outbound'?: ViewVoiceStatisticsDataTotalOutbound;
     'inbound'?: CancelAllSmsData;
     'bounced'?: CancelAllSmsData;
 
@@ -25,7 +25,7 @@ export class ViewSmsStatisticsDataTotal {
         {
             "name": "outbound",
             "baseName": "outbound",
-            "type": "ViewVoiceStatisticsDataStatsInnerOutbound"
+            "type": "ViewVoiceStatisticsDataTotalOutbound"
         },
         {
             "name": "inbound",

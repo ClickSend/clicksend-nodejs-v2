@@ -11,49 +11,94 @@
  */
 
 import { RequestFile } from './models';
-import { ViewSubaccountsData } from './viewSubaccountsData';
+import { Contact } from './contact';
 
-export class ViewSubaccounts {
+export class ViewListContactsData {
     /**
-    * The HTTP status code of the response.
+    * The total number of items available for viewing.
     */
-    'httpCode'?: number;
+    'total'?: number;
     /**
-    * The response code indicating the status of the operation.
+    * The number of items returned per page. This is specified in the limit parameter. You can have 100 items at maximum, and 15 at minimum.
     */
-    'responseCode'?: string;
+    'perPage'?: number;
     /**
-    * A message describing the outcome of the operation.
+    * The current page number.
     */
-    'responseMsg'?: string;
-    'data'?: ViewSubaccountsData;
+    'currentPage'?: number;
+    /**
+    * The last page number.
+    */
+    'lastPage'?: number;
+    /**
+    * A URL of the next page. It will return **null** if there’s no next page.
+    */
+    'nextPageUrl'?: string | null;
+    /**
+    * A URL of the previous page. It will return **null** if there’s no previous page.
+    */
+    'prevPageUrl'?: string | null;
+    /**
+    * The number of the first result in the current page.
+    */
+    'from'?: number;
+    /**
+    * The number of the last result in the current page.
+    */
+    'to'?: number;
+    'data'?: Array<Contact>;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "httpCode",
-            "baseName": "http_code",
+            "name": "total",
+            "baseName": "total",
             "type": "number"
         },
         {
-            "name": "responseCode",
-            "baseName": "response_code",
+            "name": "perPage",
+            "baseName": "per_page",
+            "type": "number"
+        },
+        {
+            "name": "currentPage",
+            "baseName": "current_page",
+            "type": "number"
+        },
+        {
+            "name": "lastPage",
+            "baseName": "last_page",
+            "type": "number"
+        },
+        {
+            "name": "nextPageUrl",
+            "baseName": "next_page_url",
             "type": "string"
         },
         {
-            "name": "responseMsg",
-            "baseName": "response_msg",
+            "name": "prevPageUrl",
+            "baseName": "prev_page_url",
             "type": "string"
+        },
+        {
+            "name": "from",
+            "baseName": "from",
+            "type": "number"
+        },
+        {
+            "name": "to",
+            "baseName": "to",
+            "type": "number"
         },
         {
             "name": "data",
             "baseName": "data",
-            "type": "ViewSubaccountsData"
+            "type": "Array<Contact>"
         }    ];
 
     static getAttributeTypeMap() {
-        return ViewSubaccounts.attributeTypeMap;
+        return ViewListContactsData.attributeTypeMap;
     }
 }
 

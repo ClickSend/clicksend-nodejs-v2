@@ -28,7 +28,7 @@ export class ViewAccountUsageDataSmsInner {
     /**
     * The total price of SMS.
     */
-    'totalPrice'?: string;
+    'totalPrice'?: number;
 
     static discriminator: string | undefined = undefined;
 
@@ -51,7 +51,7 @@ export class ViewAccountUsageDataSmsInner {
         {
             "name": "totalPrice",
             "baseName": "total_price",
-            "type": "string"
+            "type": "number"
         }    ];
 
     static getAttributeTypeMap() {

@@ -20,7 +20,7 @@ export class ViewRechargePackagesDataPackagesInner {
     /**
     * The price of the package.
     */
-    'packagePrice'?: number;
+    'packagePrice'?: string;
     /**
     * The pricing tier used to determine the cost per message.
     */
@@ -125,7 +125,7 @@ export class ViewRechargePackagesDataPackagesInner {
         {
             "name": "packagePrice",
             "baseName": "package_price",
-            "type": "number"
+            "type": "string"
         },
         {
             "name": "priceRate",
