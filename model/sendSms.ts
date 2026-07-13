@@ -17,7 +17,7 @@ export class SendSms {
     /**
     * The HTTP code of the response. Visit [this page](/#status-codes) for more information.  This parameter doesn’t reflect the status of each message. Check the status parameter of the message object to view the status of the individual message.
     */
-    'httpCode'?: string;
+    'httpCode'?: number;
     /**
     * The response code of the operation. Visit [this page](/#status-codes) for more information.
     */
@@ -34,7 +34,7 @@ export class SendSms {
         {
             "name": "httpCode",
             "baseName": "http_code",
-            "type": "string"
+            "type": "number"
         },
         {
             "name": "responseCode",
