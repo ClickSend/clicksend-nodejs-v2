@@ -48,7 +48,7 @@ export class SmsSendSms {
     /**
     * The price of this message. This depends on the total number of parts of the message.
     */
-    'messagePrice'?: number;
+    'messagePrice'?: string;
     /**
     * The email address to which replies should be emailed to. If omitted, the reply will be emailed back to the user who sent the outgoing SMS.
     */
@@ -136,7 +136,7 @@ export class SmsSendSms {
         {
             "name": "messagePrice",
             "baseName": "message_price",
-            "type": "number"
+            "type": "string"
         },
         {
             "name": "fromEmail",

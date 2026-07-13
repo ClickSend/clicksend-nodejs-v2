@@ -18,7 +18,7 @@ export class CalculateMmsCampaignPriceData {
     /**
     * The total number of records.
     */
-    'totalCount'?: string;
+    'totalCount'?: number;
     /**
     * The total price of the MMS campaign.
     */
@@ -32,7 +32,7 @@ export class CalculateMmsCampaignPriceData {
         {
             "name": "totalCount",
             "baseName": "total_count",
-            "type": "string"
+            "type": "number"
         },
         {
             "name": "totalPrice",

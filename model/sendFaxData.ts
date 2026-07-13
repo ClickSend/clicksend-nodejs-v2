@@ -22,11 +22,11 @@ export class SendFaxData {
     /**
     * The total count of the fax.
     */
-    'totalCount'?: string;
+    'totalCount'?: number;
     /**
     * The count of the queued fax.
     */
-    'queuedCount'?: string;
+    'queuedCount'?: number;
     /**
     * The list of messages that were sent.
     */
@@ -44,12 +44,12 @@ export class SendFaxData {
         {
             "name": "totalCount",
             "baseName": "total_count",
-            "type": "string"
+            "type": "number"
         },
         {
             "name": "queuedCount",
             "baseName": "queued_count",
-            "type": "string"
+            "type": "number"
         },
         {
             "name": "messages",

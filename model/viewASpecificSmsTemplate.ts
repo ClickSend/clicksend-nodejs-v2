@@ -17,7 +17,7 @@ export class ViewASpecificSmsTemplate {
     /**
     * The HTTP status code of the response.
     */
-    'httpCode'?: string;
+    'httpCode'?: number;
     /**
     * The response code indicating the status of the operation.
     */
@@ -34,7 +34,7 @@ export class ViewASpecificSmsTemplate {
         {
             "name": "httpCode",
             "baseName": "http_code",
-            "type": "string"
+            "type": "number"
         },
         {
             "name": "responseCode",
