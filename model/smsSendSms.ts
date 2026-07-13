@@ -52,19 +52,19 @@ export class SmsSendSms {
     /**
     * The email address to which replies should be emailed to. If omitted, the reply will be emailed back to the user who sent the outgoing SMS.
     */
-    'fromEmail'?: string;
+    'fromEmail'?: string | null;
     /**
     * The _list_id_ of the contact list the message was sent to. This parameter will have a **null** value if you didn’t send to a list in the request.
     */
-    'listId'?: string;
+    'listId'?: string | null;
     /**
     * A note that was sent from the request.
     */
-    'customString'?: string;
+    'customString'?: string | null;
     /**
     * This is the ID of the contact. This parameter will have a **null** value if you didn’t provide a _contact_id_ in the request.
     */
-    'contactId'?: string;
+    'contactId'?: string | null;
     /**
     * The unique user ID of the sender.
     */
