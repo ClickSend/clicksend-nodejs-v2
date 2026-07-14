@@ -12,12 +12,12 @@
 
 import { RequestFile } from './models';
 import { Currency } from './currency';
-import { ViewSmsStatisticsDataStatInner } from './viewSmsStatisticsDataStatInner';
+import { ViewSmsStatisticsDataStatsInner } from './viewSmsStatisticsDataStatsInner';
 import { ViewSmsStatisticsDataTotal } from './viewSmsStatisticsDataTotal';
 
 export class ViewSmsStatisticsData {
     'total'?: ViewSmsStatisticsDataTotal;
-    'stat'?: Array<ViewSmsStatisticsDataStatInner>;
+    'stats'?: Array<ViewSmsStatisticsDataStatsInner>;
     'currency'?: Currency;
 
     static discriminator: string | undefined = undefined;
@@ -29,9 +29,9 @@ export class ViewSmsStatisticsData {
             "type": "ViewSmsStatisticsDataTotal"
         },
         {
-            "name": "stat",
-            "baseName": "stat",
-            "type": "Array<ViewSmsStatisticsDataStatInner>"
+            "name": "stats",
+            "baseName": "stats",
+            "type": "Array<ViewSmsStatisticsDataStatsInner>"
         },
         {
             "name": "currency",

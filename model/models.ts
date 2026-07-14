@@ -364,6 +364,7 @@ export * from './viewListContacts';
 export * from './viewListContactsData';
 export * from './viewLists';
 export * from './viewListsData';
+export * from './viewListsDataLinksInner';
 export * from './viewMasterEmailTemplate';
 export * from './viewMasterEmailTemplates';
 export * from './viewMmsCampaign';
@@ -389,12 +390,11 @@ export * from './viewSmsHistoryDataAllOfDataInner';
 export * from './viewSmsInboundAutomation';
 export * from './viewSmsInboundAutomations';
 export * from './viewSmsInboundAutomationsData';
-export * from './viewSmsInboundAutomationsDataAllOfLinksInner';
 export * from './viewSmsReceipts';
 export * from './viewSmsReceiptsData';
 export * from './viewSmsStatistics';
 export * from './viewSmsStatisticsData';
-export * from './viewSmsStatisticsDataStatInner';
+export * from './viewSmsStatisticsDataStatsInner';
 export * from './viewSmsStatisticsDataTotal';
 export * from './viewSmsTemplates';
 export * from './viewSmsTemplatesData';
@@ -818,6 +818,7 @@ import { ViewListContacts } from './viewListContacts';
 import { ViewListContactsData } from './viewListContactsData';
 import { ViewLists } from './viewLists';
 import { ViewListsData } from './viewListsData';
+import { ViewListsDataLinksInner } from './viewListsDataLinksInner';
 import { ViewMasterEmailTemplate } from './viewMasterEmailTemplate';
 import { ViewMasterEmailTemplates } from './viewMasterEmailTemplates';
 import { ViewMmsCampaign } from './viewMmsCampaign';
@@ -843,12 +844,11 @@ import { ViewSmsHistoryDataAllOfDataInner } from './viewSmsHistoryDataAllOfDataI
 import { ViewSmsInboundAutomation } from './viewSmsInboundAutomation';
 import { ViewSmsInboundAutomations } from './viewSmsInboundAutomations';
 import { ViewSmsInboundAutomationsData } from './viewSmsInboundAutomationsData';
-import { ViewSmsInboundAutomationsDataAllOfLinksInner } from './viewSmsInboundAutomationsDataAllOfLinksInner';
 import { ViewSmsReceipts } from './viewSmsReceipts';
 import { ViewSmsReceiptsData } from './viewSmsReceiptsData';
 import { ViewSmsStatistics } from './viewSmsStatistics';
 import { ViewSmsStatisticsData } from './viewSmsStatisticsData';
-import { ViewSmsStatisticsDataStatInner } from './viewSmsStatisticsDataStatInner';
+import { ViewSmsStatisticsDataStatsInner } from './viewSmsStatisticsDataStatsInner';
 import { ViewSmsStatisticsDataTotal } from './viewSmsStatisticsDataTotal';
 import { ViewSmsTemplates } from './viewSmsTemplates';
 import { ViewSmsTemplatesData } from './viewSmsTemplatesData';
@@ -1290,6 +1290,7 @@ let typeMap: {[index: string]: any} = {
     "ViewListContactsData": ViewListContactsData,
     "ViewLists": ViewLists,
     "ViewListsData": ViewListsData,
+    "ViewListsDataLinksInner": ViewListsDataLinksInner,
     "ViewMasterEmailTemplate": ViewMasterEmailTemplate,
     "ViewMasterEmailTemplates": ViewMasterEmailTemplates,
     "ViewMmsCampaign": ViewMmsCampaign,
@@ -1315,12 +1316,11 @@ let typeMap: {[index: string]: any} = {
     "ViewSmsInboundAutomation": ViewSmsInboundAutomation,
     "ViewSmsInboundAutomations": ViewSmsInboundAutomations,
     "ViewSmsInboundAutomationsData": ViewSmsInboundAutomationsData,
-    "ViewSmsInboundAutomationsDataAllOfLinksInner": ViewSmsInboundAutomationsDataAllOfLinksInner,
     "ViewSmsReceipts": ViewSmsReceipts,
     "ViewSmsReceiptsData": ViewSmsReceiptsData,
     "ViewSmsStatistics": ViewSmsStatistics,
     "ViewSmsStatisticsData": ViewSmsStatisticsData,
-    "ViewSmsStatisticsDataStatInner": ViewSmsStatisticsDataStatInner,
+    "ViewSmsStatisticsDataStatsInner": ViewSmsStatisticsDataStatsInner,
     "ViewSmsStatisticsDataTotal": ViewSmsStatisticsDataTotal,
     "ViewSmsTemplates": ViewSmsTemplates,
     "ViewSmsTemplatesData": ViewSmsTemplatesData,

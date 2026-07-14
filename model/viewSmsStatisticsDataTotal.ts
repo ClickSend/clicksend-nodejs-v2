@@ -11,13 +11,12 @@
  */
 
 import { RequestFile } from './models';
-import { CancelAllSmsData } from './cancelAllSmsData';
 import { ViewVoiceStatisticsDataTotalOutbound } from './viewVoiceStatisticsDataTotalOutbound';
 
 export class ViewSmsStatisticsDataTotal {
     'outbound'?: ViewVoiceStatisticsDataTotalOutbound;
-    'inbound'?: CancelAllSmsData;
-    'bounced'?: CancelAllSmsData;
+    'inbound'?: ViewVoiceStatisticsDataTotalOutbound;
+    'bounced'?: ViewVoiceStatisticsDataTotalOutbound;
 
     static discriminator: string | undefined = undefined;
 
@@ -30,12 +29,12 @@ export class ViewSmsStatisticsDataTotal {
         {
             "name": "inbound",
             "baseName": "inbound",
-            "type": "CancelAllSmsData"
+            "type": "ViewVoiceStatisticsDataTotalOutbound"
         },
         {
             "name": "bounced",
             "baseName": "bounced",
-            "type": "CancelAllSmsData"
+            "type": "ViewVoiceStatisticsDataTotalOutbound"
         }    ];
 
     static getAttributeTypeMap() {

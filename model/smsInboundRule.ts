@@ -49,6 +49,10 @@ export class SmsInboundRule {
     * The status of the inbound rule.
     */
     'enabled'?: number;
+    /**
+    * The format used when calling the webhook (e.g. post, json).
+    */
+    'webhookType'?: string | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -97,6 +101,11 @@ export class SmsInboundRule {
             "name": "enabled",
             "baseName": "enabled",
             "type": "number"
+        },
+        {
+            "name": "webhookType",
+            "baseName": "webhook_type",
+            "type": "string"
         }    ];
 
     static getAttributeTypeMap() {

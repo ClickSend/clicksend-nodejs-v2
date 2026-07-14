@@ -11,44 +11,51 @@
  */
 
 import { RequestFile } from './models';
-import { CancelAllSmsData } from './cancelAllSmsData';
-import { ViewVoiceStatisticsDataTotalOutbound } from './viewVoiceStatisticsDataTotalOutbound';
 
-export class ViewSmsStatisticsDataStatInner {
+export class ViewListsDataLinksInner {
     /**
-    * The date.
+    * The URL of this page link.
     */
-    'date'?: number;
-    'outbound'?: ViewVoiceStatisticsDataTotalOutbound;
-    'inbound'?: CancelAllSmsData;
-    'bounced'?: CancelAllSmsData;
+    'url'?: string | null;
+    /**
+    * The display label for this page link.
+    */
+    'label'?: string;
+    /**
+    * The page number this link points to.
+    */
+    'page'?: number | null;
+    /**
+    * Whether this link represents the current page.
+    */
+    'active'?: boolean;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "date",
-            "baseName": "date",
+            "name": "url",
+            "baseName": "url",
+            "type": "string"
+        },
+        {
+            "name": "label",
+            "baseName": "label",
+            "type": "string"
+        },
+        {
+            "name": "page",
+            "baseName": "page",
             "type": "number"
         },
         {
-            "name": "outbound",
-            "baseName": "outbound",
-            "type": "ViewVoiceStatisticsDataTotalOutbound"
-        },
-        {
-            "name": "inbound",
-            "baseName": "inbound",
-            "type": "CancelAllSmsData"
-        },
-        {
-            "name": "bounced",
-            "baseName": "bounced",
-            "type": "CancelAllSmsData"
+            "name": "active",
+            "baseName": "active",
+            "type": "boolean"
         }    ];
 
     static getAttributeTypeMap() {
-        return ViewSmsStatisticsDataStatInner.attributeTypeMap;
+        return ViewListsDataLinksInner.attributeTypeMap;
     }
 }
 

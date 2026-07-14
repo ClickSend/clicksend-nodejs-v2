@@ -12,7 +12,7 @@
 
 import { RequestFile } from './models';
 import { SmsInboundRule } from './smsInboundRule';
-import { ViewSmsInboundAutomationsDataAllOfLinksInner } from './viewSmsInboundAutomationsDataAllOfLinksInner';
+import { ViewListsDataLinksInner } from './viewListsDataLinksInner';
 
 export class ViewSmsInboundAutomationsData {
     /**
@@ -62,7 +62,7 @@ export class ViewSmsInboundAutomationsData {
     /**
     * The list of pagination links.
     */
-    'links'?: Array<ViewSmsInboundAutomationsDataAllOfLinksInner>;
+    'links'?: Array<ViewListsDataLinksInner>;
     'data'?: Array<SmsInboundRule>;
 
     static discriminator: string | undefined = undefined;
@@ -126,7 +126,7 @@ export class ViewSmsInboundAutomationsData {
         {
             "name": "links",
             "baseName": "links",
-            "type": "Array<ViewSmsInboundAutomationsDataAllOfLinksInner>"
+            "type": "Array<ViewListsDataLinksInner>"
         },
         {
             "name": "data",

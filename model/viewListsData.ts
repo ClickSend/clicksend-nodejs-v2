@@ -12,6 +12,7 @@
 
 import { RequestFile } from './models';
 import { ContactList } from './contactList';
+import { ViewListsDataLinksInner } from './viewListsDataLinksInner';
 
 export class ViewListsData {
     /**
@@ -46,6 +47,22 @@ export class ViewListsData {
     * The number of the last contact on the current page.
     */
     'to'?: number;
+    /**
+    * The URL of the first page of records.
+    */
+    'firstPageUrl'?: string | null;
+    /**
+    * The URL of the last page of records.
+    */
+    'lastPageUrl'?: string | null;
+    /**
+    * The base URL path used to build pagination links.
+    */
+    'path'?: string;
+    /**
+    * The list of pagination links.
+    */
+    'links'?: Array<ViewListsDataLinksInner>;
     /**
     * The contacts in the list.
     */
@@ -93,6 +110,26 @@ export class ViewListsData {
             "name": "to",
             "baseName": "to",
             "type": "number"
+        },
+        {
+            "name": "firstPageUrl",
+            "baseName": "first_page_url",
+            "type": "string"
+        },
+        {
+            "name": "lastPageUrl",
+            "baseName": "last_page_url",
+            "type": "string"
+        },
+        {
+            "name": "path",
+            "baseName": "path",
+            "type": "string"
+        },
+        {
+            "name": "links",
+            "baseName": "links",
+            "type": "Array<ViewListsDataLinksInner>"
         },
         {
             "name": "data",

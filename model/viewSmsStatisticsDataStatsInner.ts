@@ -11,51 +11,43 @@
  */
 
 import { RequestFile } from './models';
+import { ViewVoiceStatisticsDataTotalOutbound } from './viewVoiceStatisticsDataTotalOutbound';
 
-export class ViewSmsInboundAutomationsDataAllOfLinksInner {
+export class ViewSmsStatisticsDataStatsInner {
     /**
-    * The URL of this page link.
+    * The date.
     */
-    'url'?: string | null;
-    /**
-    * The display label for this page link.
-    */
-    'label'?: string;
-    /**
-    * The page number this link points to.
-    */
-    'page'?: number | null;
-    /**
-    * Whether this link represents the current page.
-    */
-    'active'?: boolean;
+    'date'?: number;
+    'outbound'?: ViewVoiceStatisticsDataTotalOutbound;
+    'inbound'?: ViewVoiceStatisticsDataTotalOutbound;
+    'bounced'?: ViewVoiceStatisticsDataTotalOutbound;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "url",
-            "baseName": "url",
-            "type": "string"
-        },
-        {
-            "name": "label",
-            "baseName": "label",
-            "type": "string"
-        },
-        {
-            "name": "page",
-            "baseName": "page",
+            "name": "date",
+            "baseName": "date",
             "type": "number"
         },
         {
-            "name": "active",
-            "baseName": "active",
-            "type": "boolean"
+            "name": "outbound",
+            "baseName": "outbound",
+            "type": "ViewVoiceStatisticsDataTotalOutbound"
+        },
+        {
+            "name": "inbound",
+            "baseName": "inbound",
+            "type": "ViewVoiceStatisticsDataTotalOutbound"
+        },
+        {
+            "name": "bounced",
+            "baseName": "bounced",
+            "type": "ViewVoiceStatisticsDataTotalOutbound"
         }    ];
 
     static getAttributeTypeMap() {
-        return ViewSmsInboundAutomationsDataAllOfLinksInner.attributeTypeMap;
+        return ViewSmsStatisticsDataStatsInner.attributeTypeMap;
     }
 }
 
