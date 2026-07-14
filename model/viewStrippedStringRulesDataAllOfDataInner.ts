@@ -12,56 +12,32 @@
 
 import { RequestFile } from './models';
 
-export class ViewAccountUsageDataEmailInner {
+export class ViewStrippedStringRulesDataAllOfDataInner {
     /**
-    * The subaccount identifier.
+    * The ID of the rule.
     */
-    'subaccountId'?: number;
+    'ruleId'?: number;
     /**
-    * The username associated with the subaccount.
+    * The string to be stripped.
     */
-    'username'?: string;
-    /**
-    * The total count of emails.
-    */
-    'totalCount'?: number;
-    'totalPrice'?: string;
-    /**
-    * Optional notes.
-    */
-    'notes'?: string | null;
+    'stripString'?: string;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "subaccountId",
-            "baseName": "subaccount_id",
+            "name": "ruleId",
+            "baseName": "rule_id",
             "type": "number"
         },
         {
-            "name": "username",
-            "baseName": "username",
-            "type": "string"
-        },
-        {
-            "name": "totalCount",
-            "baseName": "total_count",
-            "type": "number"
-        },
-        {
-            "name": "totalPrice",
-            "baseName": "total_price",
-            "type": "string"
-        },
-        {
-            "name": "notes",
-            "baseName": "notes",
+            "name": "stripString",
+            "baseName": "strip_string",
             "type": "string"
         }    ];
 
     static getAttributeTypeMap() {
-        return ViewAccountUsageDataEmailInner.attributeTypeMap;
+        return ViewStrippedStringRulesDataAllOfDataInner.attributeTypeMap;
     }
 }
 

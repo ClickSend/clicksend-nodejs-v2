@@ -11,15 +11,15 @@
  */
 
 import { RequestFile } from './models';
-import { ViewStrippedStringRulesDataDataInner } from './viewStrippedStringRulesDataDataInner';
+import { ViewStrippedStringRulesDataAllOfDataInner } from './viewStrippedStringRulesDataAllOfDataInner';
 
 export class ViewStrippedStringRulesData {
     /**
-    * The total number of records in the response.
+    * The total number of items available for viewing.
     */
     'total'?: number;
     /**
-    * The number of records per page.
+    * The number of items returned per page. This is specified in the limit parameter. You can have 100 items at maximum, and 15 at minimum.
     */
     'perPage'?: number;
     /**
@@ -31,14 +31,22 @@ export class ViewStrippedStringRulesData {
     */
     'lastPage'?: number;
     /**
-    * The URL of the next page of records.
+    * A URL of the next page. It will return **null** if there’s no next page.
     */
     'nextPageUrl'?: string | null;
     /**
-    * The URL of the previous page of records.
+    * A URL of the previous page. It will return **null** if there’s no previous page.
     */
     'prevPageUrl'?: string | null;
-    'data'?: Array<ViewStrippedStringRulesDataDataInner>;
+    /**
+    * The number of the first result in the current page.
+    */
+    'from'?: number;
+    /**
+    * The number of the last result in the current page.
+    */
+    'to'?: number;
+    'data'?: Array<ViewStrippedStringRulesDataAllOfDataInner>;
 
     static discriminator: string | undefined = undefined;
 
@@ -74,9 +82,19 @@ export class ViewStrippedStringRulesData {
             "type": "string"
         },
         {
+            "name": "from",
+            "baseName": "from",
+            "type": "number"
+        },
+        {
+            "name": "to",
+            "baseName": "to",
+            "type": "number"
+        },
+        {
             "name": "data",
             "baseName": "data",
-            "type": "Array<ViewStrippedStringRulesDataDataInner>"
+            "type": "Array<ViewStrippedStringRulesDataAllOfDataInner>"
         }    ];
 
     static getAttributeTypeMap() {

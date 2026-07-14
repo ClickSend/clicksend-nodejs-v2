@@ -12,50 +12,41 @@
 
 import { RequestFile } from './models';
 
-export class ViewAccountUsageDataVoiceInner {
+export class AddAllowedEmailData {
     /**
-    * The subaccount identifier.
+    * The ID of the email address.
     */
-    'subaccountId'?: number;
+    'emailAddressId'?: number;
     /**
-    * The username associated with the subaccount.
+    * The email address.
     */
-    'username'?: string;
+    'emailAddress'?: string;
     /**
-    * The total count of voice calls.
+    * The sender.
     */
-    'totalCount'?: string;
-    /**
-    * The total price of voice calls.
-    */
-    'totalPrice'?: string;
+    'from'?: string;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "subaccountId",
-            "baseName": "subaccount_id",
+            "name": "emailAddressId",
+            "baseName": "email_address_id",
             "type": "number"
         },
         {
-            "name": "username",
-            "baseName": "username",
+            "name": "emailAddress",
+            "baseName": "email_address",
             "type": "string"
         },
         {
-            "name": "totalCount",
-            "baseName": "total_count",
-            "type": "string"
-        },
-        {
-            "name": "totalPrice",
-            "baseName": "total_price",
+            "name": "from",
+            "baseName": "from",
             "type": "string"
         }    ];
 
     static getAttributeTypeMap() {
-        return ViewAccountUsageDataVoiceInner.attributeTypeMap;
+        return AddAllowedEmailData.attributeTypeMap;
     }
 }
 

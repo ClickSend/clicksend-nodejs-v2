@@ -50,6 +50,10 @@ export class OwnNumber {
     */
     'verifiedTimestamp'?: Date;
     /**
+    * The timestamp when the user was last notified about this number, if applicable.
+    */
+    'notifiedTimestamp'?: string | null;
+    /**
     * Indicates whether the phone number verification is nearing its expiration date: - **true:** The verification was completed more than 11 months ago and will expire soon. You should re-verify your phone number to maintain uninterrupted service. - **false:** The verification is still valid and not approaching expiration.
     */
     'isNearingExpiration'?: boolean;
@@ -109,6 +113,11 @@ export class OwnNumber {
             "name": "verifiedTimestamp",
             "baseName": "verified_timestamp",
             "type": "Date"
+        },
+        {
+            "name": "notifiedTimestamp",
+            "baseName": "notified_timestamp",
+            "type": "string"
         },
         {
             "name": "isNearingExpiration",

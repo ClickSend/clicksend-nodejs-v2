@@ -29,6 +29,10 @@ export class ViewAccountUsageDataSmsInner {
     * The total price of SMS.
     */
     'totalPrice'?: number;
+    /**
+    * Optional notes.
+    */
+    'notes'?: string | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -52,6 +56,11 @@ export class ViewAccountUsageDataSmsInner {
             "name": "totalPrice",
             "baseName": "total_price",
             "type": "number"
+        },
+        {
+            "name": "notes",
+            "baseName": "notes",
+            "type": "string"
         }    ];
 
     static getAttributeTypeMap() {

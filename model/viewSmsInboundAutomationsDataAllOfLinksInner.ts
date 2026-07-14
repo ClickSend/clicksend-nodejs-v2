@@ -11,94 +11,51 @@
  */
 
 import { RequestFile } from './models';
-import { MmsCampaign } from './mmsCampaign';
 
-export class ViewAllMmsCampaigns {
+export class ViewSmsInboundAutomationsDataAllOfLinksInner {
     /**
-    * The total number of items available for viewing.
+    * The URL of this page link.
     */
-    'total'?: number;
+    'url'?: string | null;
     /**
-    * The number of items returned per page. This is specified in the limit parameter. You can have 100 items at maximum, and 15 at minimum.
+    * The display label for this page link.
     */
-    'perPage'?: number;
+    'label'?: string;
     /**
-    * The current page number.
+    * The page number this link points to.
     */
-    'currentPage'?: number;
+    'page'?: number | null;
     /**
-    * The last page number.
+    * Whether this link represents the current page.
     */
-    'lastPage'?: number;
-    /**
-    * A URL of the next page. It will return **null** if there’s no next page.
-    */
-    'nextPageUrl'?: string | null;
-    /**
-    * A URL of the previous page. It will return **null** if there’s no previous page.
-    */
-    'prevPageUrl'?: string | null;
-    /**
-    * The number of the first result in the current page.
-    */
-    'from'?: number;
-    /**
-    * The number of the last result in the current page.
-    */
-    'to'?: number;
-    'data'?: Array<MmsCampaign>;
+    'active'?: boolean;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "total",
-            "baseName": "total",
-            "type": "number"
-        },
-        {
-            "name": "perPage",
-            "baseName": "per_page",
-            "type": "number"
-        },
-        {
-            "name": "currentPage",
-            "baseName": "current_page",
-            "type": "number"
-        },
-        {
-            "name": "lastPage",
-            "baseName": "last_page",
-            "type": "number"
-        },
-        {
-            "name": "nextPageUrl",
-            "baseName": "next_page_url",
+            "name": "url",
+            "baseName": "url",
             "type": "string"
         },
         {
-            "name": "prevPageUrl",
-            "baseName": "prev_page_url",
+            "name": "label",
+            "baseName": "label",
             "type": "string"
         },
         {
-            "name": "from",
-            "baseName": "from",
+            "name": "page",
+            "baseName": "page",
             "type": "number"
         },
         {
-            "name": "to",
-            "baseName": "to",
-            "type": "number"
-        },
-        {
-            "name": "data",
-            "baseName": "data",
-            "type": "Array<MmsCampaign>"
+            "name": "active",
+            "baseName": "active",
+            "type": "boolean"
         }    ];
 
     static getAttributeTypeMap() {
-        return ViewAllMmsCampaigns.attributeTypeMap;
+        return ViewSmsInboundAutomationsDataAllOfLinksInner.attributeTypeMap;
     }
 }
 

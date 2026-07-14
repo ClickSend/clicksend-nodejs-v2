@@ -11,94 +11,87 @@
  */
 
 import { RequestFile } from './models';
-import { MmsCampaign } from './mmsCampaign';
 
-export class ViewAllMmsCampaignsData {
+export class ViewAllowedEmailsDataAllOfDataInner {
     /**
-    * The total number of items available for viewing.
+    * The ID of the email address.
     */
-    'total'?: number;
+    'emailAddressId'?: number;
     /**
-    * The number of items returned per page. This is specified in the limit parameter. You can have 100 items at maximum, and 15 at minimum.
+    * The email address.
     */
-    'perPage'?: number;
+    'emailAddress'?: string;
     /**
-    * The current page number.
+    * The sender.
     */
-    'currentPage'?: number;
+    'from'?: string;
     /**
-    * The last page number.
+    * The ID of the subaccount that owns this email address.
     */
-    'lastPage'?: number;
+    'subaccountId'?: number;
     /**
-    * A URL of the next page. It will return **null** if there’s no next page.
+    * The fax number used as the sender, if applicable.
     */
-    'nextPageUrl'?: string | null;
+    'fromFax'?: string | null;
     /**
-    * A URL of the previous page. It will return **null** if there’s no previous page.
+    * The voice used when this email address triggers a voice message.
     */
-    'prevPageUrl'?: string | null;
+    'voice'?: string;
     /**
-    * The number of the first result in the current page.
+    * The language used when this email address triggers a voice message.
     */
-    'from'?: number;
+    'lang'?: string;
     /**
-    * The number of the last result in the current page.
+    * The name of the subaccount that owns this email address.
     */
-    'to'?: number;
-    'data'?: Array<MmsCampaign>;
+    'subaccountName'?: string;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "total",
-            "baseName": "total",
+            "name": "emailAddressId",
+            "baseName": "email_address_id",
             "type": "number"
         },
         {
-            "name": "perPage",
-            "baseName": "per_page",
-            "type": "number"
-        },
-        {
-            "name": "currentPage",
-            "baseName": "current_page",
-            "type": "number"
-        },
-        {
-            "name": "lastPage",
-            "baseName": "last_page",
-            "type": "number"
-        },
-        {
-            "name": "nextPageUrl",
-            "baseName": "next_page_url",
-            "type": "string"
-        },
-        {
-            "name": "prevPageUrl",
-            "baseName": "prev_page_url",
+            "name": "emailAddress",
+            "baseName": "email_address",
             "type": "string"
         },
         {
             "name": "from",
             "baseName": "from",
+            "type": "string"
+        },
+        {
+            "name": "subaccountId",
+            "baseName": "subaccount_id",
             "type": "number"
         },
         {
-            "name": "to",
-            "baseName": "to",
-            "type": "number"
+            "name": "fromFax",
+            "baseName": "from_fax",
+            "type": "string"
         },
         {
-            "name": "data",
-            "baseName": "data",
-            "type": "Array<MmsCampaign>"
+            "name": "voice",
+            "baseName": "voice",
+            "type": "string"
+        },
+        {
+            "name": "lang",
+            "baseName": "lang",
+            "type": "string"
+        },
+        {
+            "name": "subaccountName",
+            "baseName": "_subaccount_name",
+            "type": "string"
         }    ];
 
     static getAttributeTypeMap() {
-        return ViewAllMmsCampaignsData.attributeTypeMap;
+        return ViewAllowedEmailsDataAllOfDataInner.attributeTypeMap;
     }
 }
 

@@ -11,23 +11,32 @@
  */
 
 import { RequestFile } from './models';
+import { Currency } from './currency';
 import { ViewAccountUsageDataEmailInner } from './viewAccountUsageDataEmailInner';
 import { ViewAccountUsageDataEmailTotal } from './viewAccountUsageDataEmailTotal';
+import { ViewAccountUsageDataMmsInner } from './viewAccountUsageDataMmsInner';
 import { ViewAccountUsageDataSmsInner } from './viewAccountUsageDataSmsInner';
 import { ViewAccountUsageDataSmsTotal } from './viewAccountUsageDataSmsTotal';
-import { ViewAccountUsageDataVoiceInner } from './viewAccountUsageDataVoiceInner';
+import { ViewVoiceStatisticsDataTotalOutbound } from './viewVoiceStatisticsDataTotalOutbound';
 
 export class ViewAccountUsageData {
     'sms'?: Array<ViewAccountUsageDataSmsInner>;
-    'voice'?: Array<ViewAccountUsageDataVoiceInner>;
-    'fax'?: Array<ViewAccountUsageDataVoiceInner>;
-    'post'?: Array<ViewAccountUsageDataVoiceInner>;
+    'mms'?: Array<ViewAccountUsageDataMmsInner>;
+    'voice'?: Array<ViewAccountUsageDataMmsInner>;
+    'fax'?: Array<ViewAccountUsageDataMmsInner>;
+    'post'?: Array<ViewAccountUsageDataMmsInner>;
     'email'?: Array<ViewAccountUsageDataEmailInner>;
+    'emailTransactional'?: Array<ViewAccountUsageDataEmailInner>;
+    'postcards'?: Array<ViewAccountUsageDataMmsInner>;
     'smsTotal'?: ViewAccountUsageDataSmsTotal;
     'voiceTotal'?: ViewAccountUsageDataSmsTotal;
     'faxTotal'?: ViewAccountUsageDataSmsTotal;
     'postTotal'?: ViewAccountUsageDataSmsTotal;
     'emailTotal'?: ViewAccountUsageDataEmailTotal;
+    'mmsTotal'?: ViewVoiceStatisticsDataTotalOutbound;
+    'emailTransactionalTotal'?: ViewVoiceStatisticsDataTotalOutbound;
+    'postcardsTotal'?: ViewVoiceStatisticsDataTotalOutbound;
+    'currency'?: Currency;
 
     static discriminator: string | undefined = undefined;
 
@@ -38,24 +47,39 @@ export class ViewAccountUsageData {
             "type": "Array<ViewAccountUsageDataSmsInner>"
         },
         {
+            "name": "mms",
+            "baseName": "mms",
+            "type": "Array<ViewAccountUsageDataMmsInner>"
+        },
+        {
             "name": "voice",
             "baseName": "voice",
-            "type": "Array<ViewAccountUsageDataVoiceInner>"
+            "type": "Array<ViewAccountUsageDataMmsInner>"
         },
         {
             "name": "fax",
             "baseName": "fax",
-            "type": "Array<ViewAccountUsageDataVoiceInner>"
+            "type": "Array<ViewAccountUsageDataMmsInner>"
         },
         {
             "name": "post",
             "baseName": "post",
-            "type": "Array<ViewAccountUsageDataVoiceInner>"
+            "type": "Array<ViewAccountUsageDataMmsInner>"
         },
         {
             "name": "email",
             "baseName": "email",
             "type": "Array<ViewAccountUsageDataEmailInner>"
+        },
+        {
+            "name": "emailTransactional",
+            "baseName": "email_transactional",
+            "type": "Array<ViewAccountUsageDataEmailInner>"
+        },
+        {
+            "name": "postcards",
+            "baseName": "postcards",
+            "type": "Array<ViewAccountUsageDataMmsInner>"
         },
         {
             "name": "smsTotal",
@@ -81,6 +105,26 @@ export class ViewAccountUsageData {
             "name": "emailTotal",
             "baseName": "email_total",
             "type": "ViewAccountUsageDataEmailTotal"
+        },
+        {
+            "name": "mmsTotal",
+            "baseName": "mms_total",
+            "type": "ViewVoiceStatisticsDataTotalOutbound"
+        },
+        {
+            "name": "emailTransactionalTotal",
+            "baseName": "email_transactional_total",
+            "type": "ViewVoiceStatisticsDataTotalOutbound"
+        },
+        {
+            "name": "postcardsTotal",
+            "baseName": "postcards_total",
+            "type": "ViewVoiceStatisticsDataTotalOutbound"
+        },
+        {
+            "name": "currency",
+            "baseName": "_currency",
+            "type": "Currency"
         }    ];
 
     static getAttributeTypeMap() {

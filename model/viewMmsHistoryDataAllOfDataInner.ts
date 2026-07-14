@@ -30,6 +30,18 @@ export class ViewMmsHistoryDataAllOfDataInner {
     */
     'body'?: string;
     /**
+    * The subject of the message.
+    */
+    'subject'?: string | null;
+    /**
+    * The priority of the message.
+    */
+    'priority'?: number;
+    /**
+    * A temporary, signed URL to download the message\'s media attachment.
+    */
+    'mediaFileUrl'?: string | null;
+    /**
     * The status of the message.
     */
     'status'?: string;
@@ -41,6 +53,10 @@ export class ViewMmsHistoryDataAllOfDataInner {
     * The schedule time of the message.
     */
     'schedule'?: string;
+    /**
+    * The Unix timestamp when the message was added.
+    */
+    'dateAdded'?: number;
     /**
     * The status code (if applicable).
     */
@@ -138,6 +154,21 @@ export class ViewMmsHistoryDataAllOfDataInner {
             "type": "string"
         },
         {
+            "name": "subject",
+            "baseName": "subject",
+            "type": "string"
+        },
+        {
+            "name": "priority",
+            "baseName": "priority",
+            "type": "number"
+        },
+        {
+            "name": "mediaFileUrl",
+            "baseName": "_media_file_url",
+            "type": "string"
+        },
+        {
             "name": "status",
             "baseName": "status",
             "type": "string"
@@ -151,6 +182,11 @@ export class ViewMmsHistoryDataAllOfDataInner {
             "name": "schedule",
             "baseName": "schedule",
             "type": "string"
+        },
+        {
+            "name": "dateAdded",
+            "baseName": "date_added",
+            "type": "number"
         },
         {
             "name": "statusCode",

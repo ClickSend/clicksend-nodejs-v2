@@ -1,7 +1,9 @@
 import localVarRequest from 'request';
 
 export * from './account';
+export * from './accountReferrerChosen';
 export * from './addAllowedEmail';
+export * from './addAllowedEmailData';
 export * from './addAllowedEmailRequest';
 export * from './agreeToRulesAndRegulation';
 export * from './alphaTag';
@@ -146,6 +148,7 @@ export * from './generateNewApiKey';
 export * from './generateNewApiKeyData';
 export * from './generateNewApiKeyRequest';
 export * from './getAllDeliveryIssues';
+export * from './getAllDeliveryIssuesData';
 export * from './getCountriesForGlobalSending';
 export * from './getDefaultSenderDetails';
 export * from './getDefaultSendersList';
@@ -311,13 +314,12 @@ export * from './viewAccountUsage';
 export * from './viewAccountUsageData';
 export * from './viewAccountUsageDataEmailInner';
 export * from './viewAccountUsageDataEmailTotal';
+export * from './viewAccountUsageDataMmsInner';
 export * from './viewAccountUsageDataSmsInner';
 export * from './viewAccountUsageDataSmsTotal';
-export * from './viewAccountUsageDataVoiceInner';
 export * from './viewAllEmailCampaigns';
 export * from './viewAllEmailCampaignsData';
 export * from './viewAllMmsCampaigns';
-export * from './viewAllMmsCampaignsData';
 export * from './viewAllTransactions';
 export * from './viewAllTransactionsData';
 export * from './viewAllTransactionsDataAllOfDataInner';
@@ -325,7 +327,8 @@ export * from './viewAllowedEmailAddress';
 export * from './viewAllowedEmailAddresses';
 export * from './viewAllowedEmailAddressesData';
 export * from './viewAllowedEmails';
-export * from './viewAllowedEmailsDataInner';
+export * from './viewAllowedEmailsData';
+export * from './viewAllowedEmailsDataAllOfDataInner';
 export * from './viewAvailableNumbers';
 export * from './viewAvailableNumbersData';
 export * from './viewAvailableNumbersDataAllOfDataInner';
@@ -386,6 +389,7 @@ export * from './viewSmsHistoryDataAllOfDataInner';
 export * from './viewSmsInboundAutomation';
 export * from './viewSmsInboundAutomations';
 export * from './viewSmsInboundAutomationsData';
+export * from './viewSmsInboundAutomationsDataAllOfLinksInner';
 export * from './viewSmsReceipts';
 export * from './viewSmsReceiptsData';
 export * from './viewSmsStatistics';
@@ -406,7 +410,7 @@ export * from './viewStrippedStringRule';
 export * from './viewStrippedStringRuleData';
 export * from './viewStrippedStringRules';
 export * from './viewStrippedStringRulesData';
-export * from './viewStrippedStringRulesDataDataInner';
+export * from './viewStrippedStringRulesDataAllOfDataInner';
 export * from './viewSubaccounts';
 export * from './viewSubaccountsData';
 export * from './viewTemplateCategories';
@@ -419,6 +423,7 @@ export * from './viewVoiceDeliveryReceiptRules';
 export * from './viewVoiceDeliveryReceiptRulesData';
 export * from './viewVoiceLanguages';
 export * from './viewVoiceLanguagesDataInner';
+export * from './viewVoiceLanguagesDataInnerGender';
 export * from './viewVoiceReceipts';
 export * from './viewVoiceReceiptsData';
 export * from './viewVoiceStatistics';
@@ -450,7 +455,9 @@ export type RequestFile = string | Buffer | fs.ReadStream | RequestDetailedFile;
 
 
 import { Account } from './account';
+import { AccountReferrerChosen } from './accountReferrerChosen';
 import { AddAllowedEmail } from './addAllowedEmail';
+import { AddAllowedEmailData } from './addAllowedEmailData';
 import { AddAllowedEmailRequest } from './addAllowedEmailRequest';
 import { AgreeToRulesAndRegulation } from './agreeToRulesAndRegulation';
 import { AlphaTag } from './alphaTag';
@@ -595,6 +602,7 @@ import { GenerateNewApiKey } from './generateNewApiKey';
 import { GenerateNewApiKeyData } from './generateNewApiKeyData';
 import { GenerateNewApiKeyRequest } from './generateNewApiKeyRequest';
 import { GetAllDeliveryIssues } from './getAllDeliveryIssues';
+import { GetAllDeliveryIssuesData } from './getAllDeliveryIssuesData';
 import { GetCountriesForGlobalSending } from './getCountriesForGlobalSending';
 import { GetDefaultSenderDetails } from './getDefaultSenderDetails';
 import { GetDefaultSendersList } from './getDefaultSendersList';
@@ -760,13 +768,12 @@ import { ViewAccountUsage } from './viewAccountUsage';
 import { ViewAccountUsageData } from './viewAccountUsageData';
 import { ViewAccountUsageDataEmailInner } from './viewAccountUsageDataEmailInner';
 import { ViewAccountUsageDataEmailTotal } from './viewAccountUsageDataEmailTotal';
+import { ViewAccountUsageDataMmsInner } from './viewAccountUsageDataMmsInner';
 import { ViewAccountUsageDataSmsInner } from './viewAccountUsageDataSmsInner';
 import { ViewAccountUsageDataSmsTotal } from './viewAccountUsageDataSmsTotal';
-import { ViewAccountUsageDataVoiceInner } from './viewAccountUsageDataVoiceInner';
 import { ViewAllEmailCampaigns } from './viewAllEmailCampaigns';
 import { ViewAllEmailCampaignsData } from './viewAllEmailCampaignsData';
 import { ViewAllMmsCampaigns } from './viewAllMmsCampaigns';
-import { ViewAllMmsCampaignsData } from './viewAllMmsCampaignsData';
 import { ViewAllTransactions } from './viewAllTransactions';
 import { ViewAllTransactionsData } from './viewAllTransactionsData';
 import { ViewAllTransactionsDataAllOfDataInner } from './viewAllTransactionsDataAllOfDataInner';
@@ -774,7 +781,8 @@ import { ViewAllowedEmailAddress } from './viewAllowedEmailAddress';
 import { ViewAllowedEmailAddresses } from './viewAllowedEmailAddresses';
 import { ViewAllowedEmailAddressesData } from './viewAllowedEmailAddressesData';
 import { ViewAllowedEmails } from './viewAllowedEmails';
-import { ViewAllowedEmailsDataInner } from './viewAllowedEmailsDataInner';
+import { ViewAllowedEmailsData } from './viewAllowedEmailsData';
+import { ViewAllowedEmailsDataAllOfDataInner } from './viewAllowedEmailsDataAllOfDataInner';
 import { ViewAvailableNumbers } from './viewAvailableNumbers';
 import { ViewAvailableNumbersData } from './viewAvailableNumbersData';
 import { ViewAvailableNumbersDataAllOfDataInner } from './viewAvailableNumbersDataAllOfDataInner';
@@ -835,6 +843,7 @@ import { ViewSmsHistoryDataAllOfDataInner } from './viewSmsHistoryDataAllOfDataI
 import { ViewSmsInboundAutomation } from './viewSmsInboundAutomation';
 import { ViewSmsInboundAutomations } from './viewSmsInboundAutomations';
 import { ViewSmsInboundAutomationsData } from './viewSmsInboundAutomationsData';
+import { ViewSmsInboundAutomationsDataAllOfLinksInner } from './viewSmsInboundAutomationsDataAllOfLinksInner';
 import { ViewSmsReceipts } from './viewSmsReceipts';
 import { ViewSmsReceiptsData } from './viewSmsReceiptsData';
 import { ViewSmsStatistics } from './viewSmsStatistics';
@@ -855,7 +864,7 @@ import { ViewStrippedStringRule } from './viewStrippedStringRule';
 import { ViewStrippedStringRuleData } from './viewStrippedStringRuleData';
 import { ViewStrippedStringRules } from './viewStrippedStringRules';
 import { ViewStrippedStringRulesData } from './viewStrippedStringRulesData';
-import { ViewStrippedStringRulesDataDataInner } from './viewStrippedStringRulesDataDataInner';
+import { ViewStrippedStringRulesDataAllOfDataInner } from './viewStrippedStringRulesDataAllOfDataInner';
 import { ViewSubaccounts } from './viewSubaccounts';
 import { ViewSubaccountsData } from './viewSubaccountsData';
 import { ViewTemplateCategories } from './viewTemplateCategories';
@@ -868,6 +877,7 @@ import { ViewVoiceDeliveryReceiptRules } from './viewVoiceDeliveryReceiptRules';
 import { ViewVoiceDeliveryReceiptRulesData } from './viewVoiceDeliveryReceiptRulesData';
 import { ViewVoiceLanguages } from './viewVoiceLanguages';
 import { ViewVoiceLanguagesDataInner } from './viewVoiceLanguagesDataInner';
+import { ViewVoiceLanguagesDataInnerGender } from './viewVoiceLanguagesDataInnerGender';
 import { ViewVoiceReceipts } from './viewVoiceReceipts';
 import { ViewVoiceReceiptsData } from './viewVoiceReceiptsData';
 import { ViewVoiceStatistics } from './viewVoiceStatistics';
@@ -917,7 +927,9 @@ let enumsMap: {[index: string]: any} = {
 
 let typeMap: {[index: string]: any} = {
     "Account": Account,
+    "AccountReferrerChosen": AccountReferrerChosen,
     "AddAllowedEmail": AddAllowedEmail,
+    "AddAllowedEmailData": AddAllowedEmailData,
     "AddAllowedEmailRequest": AddAllowedEmailRequest,
     "AgreeToRulesAndRegulation": AgreeToRulesAndRegulation,
     "AlphaTag": AlphaTag,
@@ -1062,6 +1074,7 @@ let typeMap: {[index: string]: any} = {
     "GenerateNewApiKeyData": GenerateNewApiKeyData,
     "GenerateNewApiKeyRequest": GenerateNewApiKeyRequest,
     "GetAllDeliveryIssues": GetAllDeliveryIssues,
+    "GetAllDeliveryIssuesData": GetAllDeliveryIssuesData,
     "GetCountriesForGlobalSending": GetCountriesForGlobalSending,
     "GetDefaultSenderDetails": GetDefaultSenderDetails,
     "GetDefaultSendersList": GetDefaultSendersList,
@@ -1227,13 +1240,12 @@ let typeMap: {[index: string]: any} = {
     "ViewAccountUsageData": ViewAccountUsageData,
     "ViewAccountUsageDataEmailInner": ViewAccountUsageDataEmailInner,
     "ViewAccountUsageDataEmailTotal": ViewAccountUsageDataEmailTotal,
+    "ViewAccountUsageDataMmsInner": ViewAccountUsageDataMmsInner,
     "ViewAccountUsageDataSmsInner": ViewAccountUsageDataSmsInner,
     "ViewAccountUsageDataSmsTotal": ViewAccountUsageDataSmsTotal,
-    "ViewAccountUsageDataVoiceInner": ViewAccountUsageDataVoiceInner,
     "ViewAllEmailCampaigns": ViewAllEmailCampaigns,
     "ViewAllEmailCampaignsData": ViewAllEmailCampaignsData,
     "ViewAllMmsCampaigns": ViewAllMmsCampaigns,
-    "ViewAllMmsCampaignsData": ViewAllMmsCampaignsData,
     "ViewAllTransactions": ViewAllTransactions,
     "ViewAllTransactionsData": ViewAllTransactionsData,
     "ViewAllTransactionsDataAllOfDataInner": ViewAllTransactionsDataAllOfDataInner,
@@ -1241,7 +1253,8 @@ let typeMap: {[index: string]: any} = {
     "ViewAllowedEmailAddresses": ViewAllowedEmailAddresses,
     "ViewAllowedEmailAddressesData": ViewAllowedEmailAddressesData,
     "ViewAllowedEmails": ViewAllowedEmails,
-    "ViewAllowedEmailsDataInner": ViewAllowedEmailsDataInner,
+    "ViewAllowedEmailsData": ViewAllowedEmailsData,
+    "ViewAllowedEmailsDataAllOfDataInner": ViewAllowedEmailsDataAllOfDataInner,
     "ViewAvailableNumbers": ViewAvailableNumbers,
     "ViewAvailableNumbersData": ViewAvailableNumbersData,
     "ViewAvailableNumbersDataAllOfDataInner": ViewAvailableNumbersDataAllOfDataInner,
@@ -1302,6 +1315,7 @@ let typeMap: {[index: string]: any} = {
     "ViewSmsInboundAutomation": ViewSmsInboundAutomation,
     "ViewSmsInboundAutomations": ViewSmsInboundAutomations,
     "ViewSmsInboundAutomationsData": ViewSmsInboundAutomationsData,
+    "ViewSmsInboundAutomationsDataAllOfLinksInner": ViewSmsInboundAutomationsDataAllOfLinksInner,
     "ViewSmsReceipts": ViewSmsReceipts,
     "ViewSmsReceiptsData": ViewSmsReceiptsData,
     "ViewSmsStatistics": ViewSmsStatistics,
@@ -1322,7 +1336,7 @@ let typeMap: {[index: string]: any} = {
     "ViewStrippedStringRuleData": ViewStrippedStringRuleData,
     "ViewStrippedStringRules": ViewStrippedStringRules,
     "ViewStrippedStringRulesData": ViewStrippedStringRulesData,
-    "ViewStrippedStringRulesDataDataInner": ViewStrippedStringRulesDataDataInner,
+    "ViewStrippedStringRulesDataAllOfDataInner": ViewStrippedStringRulesDataAllOfDataInner,
     "ViewSubaccounts": ViewSubaccounts,
     "ViewSubaccountsData": ViewSubaccountsData,
     "ViewTemplateCategories": ViewTemplateCategories,
@@ -1335,6 +1349,7 @@ let typeMap: {[index: string]: any} = {
     "ViewVoiceDeliveryReceiptRulesData": ViewVoiceDeliveryReceiptRulesData,
     "ViewVoiceLanguages": ViewVoiceLanguages,
     "ViewVoiceLanguagesDataInner": ViewVoiceLanguagesDataInner,
+    "ViewVoiceLanguagesDataInnerGender": ViewVoiceLanguagesDataInnerGender,
     "ViewVoiceReceipts": ViewVoiceReceipts,
     "ViewVoiceReceiptsData": ViewVoiceReceiptsData,
     "ViewVoiceStatistics": ViewVoiceStatistics,

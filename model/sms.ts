@@ -14,9 +14,9 @@ import { RequestFile } from './models';
 
 export class Sms {
     /**
-    * The date you sent the message. It is in <a href=\"http://help.clicksend.com/what-is-a-unix-timestamp\" target=\"_blank\">Unix format</a>.
+    * The date you sent the message. It is in <a href=\"http://help.clicksend.com/what-is-a-unix-timestamp\" target=\"_blank\">Unix format</a>. Returned as a string since it may be an empty string in price-calculation responses where no message has actually been sent yet.
     */
-    'date'?: number;
+    'date'?: string;
     /**
     * The phone number of the recipient. It should be in <a href=\"https://en.wikipedia.org/wiki/E.164\" target=\"_blank\">E.164 format</a>.
     */
@@ -72,7 +72,7 @@ export class Sms {
         {
             "name": "date",
             "baseName": "date",
-            "type": "number"
+            "type": "string"
         },
         {
             "name": "to",

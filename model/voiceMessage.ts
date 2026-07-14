@@ -14,9 +14,17 @@ import { RequestFile } from './models';
 
 export class VoiceMessage {
     /**
-    * The date.
+    * The date, if applicable. May be null; see also `date_added`.
     */
-    'date'?: number;
+    'date'?: string | null;
+    /**
+    * The Unix timestamp when the message was added.
+    */
+    'dateAdded'?: number;
+    /**
+    * The ID of the list associated with the message, if applicable.
+    */
+    'listId'?: string | null;
     /**
     * The recipient\'s phone number.
     */
@@ -42,9 +50,9 @@ export class VoiceMessage {
     */
     'voice'?: string;
     /**
-    * The timestamp when the message should be sent.
+    * The timestamp when the message should be sent. Returned as a string since it may be an empty string when no schedule was set.
     */
-    'schedule'?: number;
+    'schedule'?: string;
     /**
     * The ID of the message.
     */
@@ -52,7 +60,7 @@ export class VoiceMessage {
     /**
     * The number of parts in the message.
     */
-    'messageParts'?: number;
+    'messageParts'?: string;
     /**
     * The price of the message.
     */
@@ -82,9 +90,33 @@ export class VoiceMessage {
     */
     'machineDetection'?: number;
     /**
+    * Flag indicating if an answering machine was detected.
+    */
+    'machineDetected'?: number | null;
+    /**
+    * The digits entered by the recipient, if any input was collected.
+    */
+    'digits'?: string | null;
+    /**
+    * The carrier of the recipient\'s phone number.
+    */
+    'carrier'?: string | null;
+    /**
+    * The status code of the message.
+    */
+    'statusCode'?: string | null;
+    /**
+    * A human-readable description of the status.
+    */
+    'statusText'?: string | null;
+    /**
     * The status of the message.
     */
     'status'?: string;
+    /**
+    * The API username associated with the message.
+    */
+    'apiUsername'?: string;
 
     static discriminator: string | undefined = undefined;
 
@@ -92,7 +124,17 @@ export class VoiceMessage {
         {
             "name": "date",
             "baseName": "date",
+            "type": "string"
+        },
+        {
+            "name": "dateAdded",
+            "baseName": "date_added",
             "type": "number"
+        },
+        {
+            "name": "listId",
+            "baseName": "list_id",
+            "type": "string"
         },
         {
             "name": "to",
@@ -127,7 +169,7 @@ export class VoiceMessage {
         {
             "name": "schedule",
             "baseName": "schedule",
-            "type": "number"
+            "type": "string"
         },
         {
             "name": "messageId",
@@ -137,7 +179,7 @@ export class VoiceMessage {
         {
             "name": "messageParts",
             "baseName": "message_parts",
-            "type": "number"
+            "type": "string"
         },
         {
             "name": "messagePrice",
@@ -175,8 +217,38 @@ export class VoiceMessage {
             "type": "number"
         },
         {
+            "name": "machineDetected",
+            "baseName": "machine_detected",
+            "type": "number"
+        },
+        {
+            "name": "digits",
+            "baseName": "digits",
+            "type": "string"
+        },
+        {
+            "name": "carrier",
+            "baseName": "carrier",
+            "type": "string"
+        },
+        {
+            "name": "statusCode",
+            "baseName": "status_code",
+            "type": "string"
+        },
+        {
+            "name": "statusText",
+            "baseName": "status_text",
+            "type": "string"
+        },
+        {
             "name": "status",
             "baseName": "status",
+            "type": "string"
+        },
+        {
+            "name": "apiUsername",
+            "baseName": "_api_username",
             "type": "string"
         }    ];
 

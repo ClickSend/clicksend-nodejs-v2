@@ -46,13 +46,13 @@ export class AlphaTag {
     */
     'countries'?: Array<string> | null;
     /**
-    * The timestamp when the record was created.
+    * The timestamp when the record was created. Usually ISO 8601 (e.g. \"2021-05-11T01:00:00.123Z\"), but returned as a plain string rather than a strict date-time since some older records don\'t include a UTC offset (e.g. \"2024-01-10T10:55:26.818097\").
     */
-    'createdTimestamp'?: Date;
+    'createdTimestamp'?: string;
     /**
-    * The timestamp when the record was last updated.
+    * The timestamp when the record was last updated. Usually ISO 8601 (e.g. \"2021-05-11T01:05:00.123Z\"), but returned as a plain string rather than a strict date-time since some older records don\'t include a UTC offset.
     */
-    'updatedTimestamp'?: Date;
+    'updatedTimestamp'?: string;
 
     static discriminator: string | undefined = undefined;
 
@@ -100,12 +100,12 @@ export class AlphaTag {
         {
             "name": "createdTimestamp",
             "baseName": "created_timestamp",
-            "type": "Date"
+            "type": "string"
         },
         {
             "name": "updatedTimestamp",
             "baseName": "updated_timestamp",
-            "type": "Date"
+            "type": "string"
         }    ];
 
     static getAttributeTypeMap() {

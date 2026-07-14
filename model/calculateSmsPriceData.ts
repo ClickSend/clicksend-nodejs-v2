@@ -67,7 +67,7 @@ export class CalculateSmsPriceData {
         },
         {
             "name": "currency",
-            "baseName": "currency",
+            "baseName": "_currency",
             "type": "Currency"
         },
         {

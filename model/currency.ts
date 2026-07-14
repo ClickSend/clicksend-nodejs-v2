@@ -32,6 +32,14 @@ export class Currency {
     * The full name of the currency.
     */
     'currencyNameLong'?: string;
+    /**
+    * The minimum amount that can be used to recharge the account, in this currency.
+    */
+    'minRechargeAmount'?: string;
+    /**
+    * The maximum amount that can be used to recharge the account, in this currency.
+    */
+    'maxRechargeAmount'?: string;
 
     static discriminator: string | undefined = undefined;
 
@@ -54,6 +62,16 @@ export class Currency {
         {
             "name": "currencyNameLong",
             "baseName": "currency_name_long",
+            "type": "string"
+        },
+        {
+            "name": "minRechargeAmount",
+            "baseName": "min_recharge_amount",
+            "type": "string"
+        },
+        {
+            "name": "maxRechargeAmount",
+            "baseName": "max_recharge_amount",
             "type": "string"
         }    ];
 

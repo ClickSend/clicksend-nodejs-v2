@@ -11,9 +11,9 @@
  */
 
 import { RequestFile } from './models';
-import { MmsCampaign } from './mmsCampaign';
+import { DeliveryIssue } from './deliveryIssue';
 
-export class ViewAllMmsCampaigns {
+export class GetAllDeliveryIssuesData {
     /**
     * The total number of items available for viewing.
     */
@@ -46,7 +46,7 @@ export class ViewAllMmsCampaigns {
     * The number of the last result in the current page.
     */
     'to'?: number;
-    'data'?: Array<MmsCampaign>;
+    'data'?: Array<DeliveryIssue>;
 
     static discriminator: string | undefined = undefined;
 
@@ -94,11 +94,11 @@ export class ViewAllMmsCampaigns {
         {
             "name": "data",
             "baseName": "data",
-            "type": "Array<MmsCampaign>"
+            "type": "Array<DeliveryIssue>"
         }    ];
 
     static getAttributeTypeMap() {
-        return ViewAllMmsCampaigns.attributeTypeMap;
+        return GetAllDeliveryIssuesData.attributeTypeMap;
     }
 }
 

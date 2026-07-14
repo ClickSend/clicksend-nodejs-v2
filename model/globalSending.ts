@@ -11,6 +11,7 @@
  */
 
 import { RequestFile } from './models';
+import { AccountReferrerChosen } from './accountReferrerChosen';
 import { GlobalSendingRegistrationStatus } from './globalSendingRegistrationStatus';
 
 export class GlobalSending {
@@ -34,10 +35,7 @@ export class GlobalSending {
     * The date when the country was agreed upon.
     */
     'agreedAt'?: string | null;
-    /**
-    * The entity responsible for the registration.
-    */
-    'registrationEntity'?: string | null;
+    'registrationEntity'?: AccountReferrerChosen | null;
     'registrationStatus'?: GlobalSendingRegistrationStatus;
     /**
     * The ID of the country in JotForm.
@@ -50,11 +48,11 @@ export class GlobalSending {
     /**
     * Indicates if registration is blocked.
     */
-    'blockRegistration'?: number;
+    'blockRegistration'?: boolean;
     /**
     * Indicates if leads are blocked.
     */
-    'blockLeads'?: number;
+    'blockLeads'?: boolean;
     /**
     * The trial from address.
     */
@@ -62,7 +60,7 @@ export class GlobalSending {
     /**
     * Indicates if sending is restricted.
     */
-    'restrictedSending'?: number;
+    'restrictedSending'?: boolean;
     /**
     * Indicates if trial sending is allowed.
     */
@@ -115,7 +113,7 @@ export class GlobalSending {
         {
             "name": "registrationEntity",
             "baseName": "registration_entity",
-            "type": "string"
+            "type": "AccountReferrerChosen"
         },
         {
             "name": "registrationStatus",
@@ -135,12 +133,12 @@ export class GlobalSending {
         {
             "name": "blockRegistration",
             "baseName": "block_registration",
-            "type": "number"
+            "type": "boolean"
         },
         {
             "name": "blockLeads",
             "baseName": "block_leads",
-            "type": "number"
+            "type": "boolean"
         },
         {
             "name": "trialFromAddress",
@@ -150,7 +148,7 @@ export class GlobalSending {
         {
             "name": "restrictedSending",
             "baseName": "restricted_sending",
-            "type": "number"
+            "type": "boolean"
         },
         {
             "name": "trialSending",

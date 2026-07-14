@@ -29,6 +29,14 @@ export class ContactList {
     * The number of contacts in the list.
     */
     'contactsCount'?: number;
+    /**
+    * Flag indicating if a contact import is currently in progress for this list.
+    */
+    'importInProgress'?: number;
+    /**
+    * Flag indicating if an opt-out removal is currently in progress for this list.
+    */
+    'optoutInProgress'?: number;
 
     static discriminator: string | undefined = undefined;
 
@@ -51,6 +59,16 @@ export class ContactList {
         {
             "name": "contactsCount",
             "baseName": "_contacts_count",
+            "type": "number"
+        },
+        {
+            "name": "importInProgress",
+            "baseName": "_import_in_progress",
+            "type": "number"
+        },
+        {
+            "name": "optoutInProgress",
+            "baseName": "_optout_in_progress",
             "type": "number"
         }    ];
 

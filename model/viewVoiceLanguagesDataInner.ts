@@ -11,6 +11,7 @@
  */
 
 import { RequestFile } from './models';
+import { ViewVoiceLanguagesDataInnerGender } from './viewVoiceLanguagesDataInnerGender';
 
 export class ViewVoiceLanguagesDataInner {
     /**
@@ -21,10 +22,7 @@ export class ViewVoiceLanguagesDataInner {
     * The country of the language.
     */
     'country'?: string;
-    /**
-    * The gender of the language.
-    */
-    'gender'?: string;
+    'gender'?: ViewVoiceLanguagesDataInnerGender;
 
     static discriminator: string | undefined = undefined;
 
@@ -42,7 +40,7 @@ export class ViewVoiceLanguagesDataInner {
         {
             "name": "gender",
             "baseName": "gender",
-            "type": "string"
+            "type": "ViewVoiceLanguagesDataInnerGender"
         }    ];
 
     static getAttributeTypeMap() {

@@ -11,6 +11,7 @@
  */
 
 import { RequestFile } from './models';
+import { Currency } from './currency';
 import { ViewAvailableNumbersDataAllOfDataInner } from './viewAvailableNumbersDataAllOfDataInner';
 
 export class ViewAvailableNumbersData {
@@ -47,6 +48,7 @@ export class ViewAvailableNumbersData {
     */
     'to'?: number;
     'data'?: Array<ViewAvailableNumbersDataAllOfDataInner>;
+    'currency'?: Currency;
 
     static discriminator: string | undefined = undefined;
 
@@ -95,6 +97,11 @@ export class ViewAvailableNumbersData {
             "name": "data",
             "baseName": "data",
             "type": "Array<ViewAvailableNumbersDataAllOfDataInner>"
+        },
+        {
+            "name": "currency",
+            "baseName": "_currency",
+            "type": "Currency"
         }    ];
 
     static getAttributeTypeMap() {

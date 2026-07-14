@@ -11,94 +11,60 @@
  */
 
 import { RequestFile } from './models';
-import { MmsCampaign } from './mmsCampaign';
 
-export class ViewAllMmsCampaigns {
+export class ViewAccountUsageDataMmsInner {
     /**
-    * The total number of items available for viewing.
+    * The subaccount identifier.
     */
-    'total'?: number;
+    'subaccountId'?: number;
     /**
-    * The number of items returned per page. This is specified in the limit parameter. You can have 100 items at maximum, and 15 at minimum.
+    * The username associated with the subaccount.
     */
-    'perPage'?: number;
+    'username'?: string;
     /**
-    * The current page number.
+    * The total count of MMS.
     */
-    'currentPage'?: number;
+    'totalCount'?: string;
     /**
-    * The last page number.
+    * The total price of MMS.
     */
-    'lastPage'?: number;
+    'totalPrice'?: string;
     /**
-    * A URL of the next page. It will return **null** if there’s no next page.
+    * Optional notes.
     */
-    'nextPageUrl'?: string | null;
-    /**
-    * A URL of the previous page. It will return **null** if there’s no previous page.
-    */
-    'prevPageUrl'?: string | null;
-    /**
-    * The number of the first result in the current page.
-    */
-    'from'?: number;
-    /**
-    * The number of the last result in the current page.
-    */
-    'to'?: number;
-    'data'?: Array<MmsCampaign>;
+    'notes'?: string | null;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "total",
-            "baseName": "total",
+            "name": "subaccountId",
+            "baseName": "subaccount_id",
             "type": "number"
         },
         {
-            "name": "perPage",
-            "baseName": "per_page",
-            "type": "number"
-        },
-        {
-            "name": "currentPage",
-            "baseName": "current_page",
-            "type": "number"
-        },
-        {
-            "name": "lastPage",
-            "baseName": "last_page",
-            "type": "number"
-        },
-        {
-            "name": "nextPageUrl",
-            "baseName": "next_page_url",
+            "name": "username",
+            "baseName": "username",
             "type": "string"
         },
         {
-            "name": "prevPageUrl",
-            "baseName": "prev_page_url",
+            "name": "totalCount",
+            "baseName": "total_count",
             "type": "string"
         },
         {
-            "name": "from",
-            "baseName": "from",
-            "type": "number"
+            "name": "totalPrice",
+            "baseName": "total_price",
+            "type": "string"
         },
         {
-            "name": "to",
-            "baseName": "to",
-            "type": "number"
-        },
-        {
-            "name": "data",
-            "baseName": "data",
-            "type": "Array<MmsCampaign>"
+            "name": "notes",
+            "baseName": "notes",
+            "type": "string"
         }    ];
 
     static getAttributeTypeMap() {
-        return ViewAllMmsCampaigns.attributeTypeMap;
+        return ViewAccountUsageDataMmsInner.attributeTypeMap;
     }
 }
 

@@ -11,7 +11,7 @@
  */
 
 import { RequestFile } from './models';
-import { ViewStrippedStringRulesDataDataInner } from './viewStrippedStringRulesDataDataInner';
+import { ViewStrippedStringRulesDataAllOfDataInner } from './viewStrippedStringRulesDataAllOfDataInner';
 
 export class CreateStrippedStringRule {
     /**
@@ -26,7 +26,7 @@ export class CreateStrippedStringRule {
     * A message describing the outcome of the operation.
     */
     'responseMsg'?: string;
-    'data'?: ViewStrippedStringRulesDataDataInner;
+    'data'?: ViewStrippedStringRulesDataAllOfDataInner;
 
     static discriminator: string | undefined = undefined;
 
@@ -49,7 +49,7 @@ export class CreateStrippedStringRule {
         {
             "name": "data",
             "baseName": "data",
-            "type": "ViewStrippedStringRulesDataDataInner"
+            "type": "ViewStrippedStringRulesDataAllOfDataInner"
         }    ];
 
     static getAttributeTypeMap() {

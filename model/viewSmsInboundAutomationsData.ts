@@ -12,6 +12,7 @@
 
 import { RequestFile } from './models';
 import { SmsInboundRule } from './smsInboundRule';
+import { ViewSmsInboundAutomationsDataAllOfLinksInner } from './viewSmsInboundAutomationsDataAllOfLinksInner';
 
 export class ViewSmsInboundAutomationsData {
     /**
@@ -46,6 +47,22 @@ export class ViewSmsInboundAutomationsData {
     * The number of the last result in the current page.
     */
     'to'?: number;
+    /**
+    * The URL of the first page of records.
+    */
+    'firstPageUrl'?: string | null;
+    /**
+    * The URL of the last page of records.
+    */
+    'lastPageUrl'?: string | null;
+    /**
+    * The base URL path used to build pagination links.
+    */
+    'path'?: string;
+    /**
+    * The list of pagination links.
+    */
+    'links'?: Array<ViewSmsInboundAutomationsDataAllOfLinksInner>;
     'data'?: Array<SmsInboundRule>;
 
     static discriminator: string | undefined = undefined;
@@ -90,6 +107,26 @@ export class ViewSmsInboundAutomationsData {
             "name": "to",
             "baseName": "to",
             "type": "number"
+        },
+        {
+            "name": "firstPageUrl",
+            "baseName": "first_page_url",
+            "type": "string"
+        },
+        {
+            "name": "lastPageUrl",
+            "baseName": "last_page_url",
+            "type": "string"
+        },
+        {
+            "name": "path",
+            "baseName": "path",
+            "type": "string"
+        },
+        {
+            "name": "links",
+            "baseName": "links",
+            "type": "Array<ViewSmsInboundAutomationsDataAllOfLinksInner>"
         },
         {
             "name": "data",

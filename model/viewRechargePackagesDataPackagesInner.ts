@@ -34,6 +34,10 @@ export class ViewRechargePackagesDataPackagesInner {
     */
     'smsQuantity'?: number;
     /**
+    * The carrier fee applied to SMS in this package.
+    */
+    'priceSmsCarrierFee'?: string | null;
+    /**
     * The price of the voice mobile.
     */
     'voiceMobilePrice'?: number;
@@ -49,6 +53,18 @@ export class ViewRechargePackagesDataPackagesInner {
     * The quantity of the voice landline.
     */
     'voiceLandlineQuantity'?: number;
+    /**
+    * The price of the MMS.
+    */
+    'mmsPrice'?: number;
+    /**
+    * The quantity of the MMS.
+    */
+    'mmsQuantity'?: number;
+    /**
+    * The carrier fee applied to MMS in this package.
+    */
+    'priceMmsCarrierFee'?: string | null;
     /**
     * The price of the fax.
     */
@@ -143,6 +159,11 @@ export class ViewRechargePackagesDataPackagesInner {
             "type": "number"
         },
         {
+            "name": "priceSmsCarrierFee",
+            "baseName": "price_sms_carrier_fee",
+            "type": "string"
+        },
+        {
             "name": "voiceMobilePrice",
             "baseName": "voice_mobile_price",
             "type": "number"
@@ -161,6 +182,21 @@ export class ViewRechargePackagesDataPackagesInner {
             "name": "voiceLandlineQuantity",
             "baseName": "voice_landline_quantity",
             "type": "number"
+        },
+        {
+            "name": "mmsPrice",
+            "baseName": "mms_price",
+            "type": "number"
+        },
+        {
+            "name": "mmsQuantity",
+            "baseName": "mms_quantity",
+            "type": "number"
+        },
+        {
+            "name": "priceMmsCarrierFee",
+            "baseName": "price_mms_carrier_fee",
+            "type": "string"
         },
         {
             "name": "faxPrice",

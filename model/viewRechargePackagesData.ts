@@ -28,7 +28,7 @@ export class ViewRechargePackagesData {
         },
         {
             "name": "currency",
-            "baseName": "_currency",
+            "baseName": "currency",
             "type": "Currency"
         }    ];
 

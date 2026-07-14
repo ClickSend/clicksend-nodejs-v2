@@ -42,6 +42,10 @@ export class Subaccount {
     */
     'apiKey'?: string;
     /**
+    * Flag indicating if the subaccount has access to SMPP.
+    */
+    'accessSmpp'?: number;
+    /**
     * Flag indicating if the subaccount has access to users.
     */
     'accessUsers'?: number;
@@ -86,9 +90,17 @@ export class Subaccount {
     */
     'accessReseller'?: number;
     /**
+    * Flag indicating if the subaccount has access to global sending.
+    */
+    'accessGlobalSending'?: number;
+    /**
     * Flag indicating if the subaccount has access to MMS services.
     */
     'accessMms'?: number;
+    /**
+    * Flag indicating if pricing is hidden for the subaccount.
+    */
+    'hidePricing'?: number;
     /**
     * Flag indicating if the subaccount can share campaigns.
     */
@@ -97,6 +109,14 @@ export class Subaccount {
     * Additional notes for the subaccount.
     */
     'notes'?: string | null;
+    /**
+    * Flag indicating if this is the main account rather than a subaccount.
+    */
+    'isMain'?: number;
+    /**
+    * The sign-up type used to create the subaccount, if applicable.
+    */
+    'signUpType'?: string | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -135,6 +155,11 @@ export class Subaccount {
             "name": "apiKey",
             "baseName": "api_key",
             "type": "string"
+        },
+        {
+            "name": "accessSmpp",
+            "baseName": "access_smpp",
+            "type": "number"
         },
         {
             "name": "accessUsers",
@@ -192,8 +217,18 @@ export class Subaccount {
             "type": "number"
         },
         {
+            "name": "accessGlobalSending",
+            "baseName": "access_global_sending",
+            "type": "number"
+        },
+        {
             "name": "accessMms",
             "baseName": "access_mms",
+            "type": "number"
+        },
+        {
+            "name": "hidePricing",
+            "baseName": "hide_pricing",
             "type": "number"
         },
         {
@@ -204,6 +239,16 @@ export class Subaccount {
         {
             "name": "notes",
             "baseName": "notes",
+            "type": "string"
+        },
+        {
+            "name": "isMain",
+            "baseName": "is_main",
+            "type": "number"
+        },
+        {
+            "name": "signUpType",
+            "baseName": "sign_up_type",
             "type": "string"
         }    ];
 

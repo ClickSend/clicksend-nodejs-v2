@@ -50,13 +50,13 @@ export class Contact {
     */
     'custom4'?: string;
     /**
-    * The date when the contact was added.
+    * The date when the contact was added. Returned as a plain string rather than a strict date-time since the API sometimes returns a raw Unix timestamp (e.g. \"1783997542\") instead of ISO 8601.
     */
-    'dateAdded'?: Date;
+    'dateAdded'?: string;
     /**
-    * The date when the contact was last updated.
+    * The date when the contact was last updated. Returned as a plain string rather than a strict date-time since the API sometimes returns a raw Unix timestamp (e.g. \"1783997542\") instead of ISO 8601.
     */
-    'dateUpdated'?: Date;
+    'dateUpdated'?: string;
     /**
     * The fax number of the contact.
     */
@@ -149,12 +149,12 @@ export class Contact {
         {
             "name": "dateAdded",
             "baseName": "date_added",
-            "type": "Date"
+            "type": "string"
         },
         {
             "name": "dateUpdated",
             "baseName": "date_updated",
-            "type": "Date"
+            "type": "string"
         },
         {
             "name": "faxNumber",

@@ -113,7 +113,7 @@ export class DeliveryIssue {
         },
         {
             "name": "emailAddress",
-            "baseName": "email-address",
+            "baseName": "email_address",
             "type": "string"
         }    ];
 

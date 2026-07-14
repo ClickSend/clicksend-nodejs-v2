@@ -11,7 +11,7 @@
  */
 
 import { RequestFile } from './models';
-import { ViewAllowedEmailsDataInner } from './viewAllowedEmailsDataInner';
+import { AddAllowedEmailData } from './addAllowedEmailData';
 
 export class AddAllowedEmail {
     /**
@@ -26,7 +26,7 @@ export class AddAllowedEmail {
     * A message describing the outcome of the operation.
     */
     'responseMsg'?: string;
-    'data'?: ViewAllowedEmailsDataInner;
+    'data'?: AddAllowedEmailData;
 
     static discriminator: string | undefined = undefined;
 
@@ -49,7 +49,7 @@ export class AddAllowedEmail {
         {
             "name": "data",
             "baseName": "data",
-            "type": "ViewAllowedEmailsDataInner"
+            "type": "AddAllowedEmailData"
         }    ];
 
     static getAttributeTypeMap() {

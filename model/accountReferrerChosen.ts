@@ -12,41 +12,35 @@
 
 import { RequestFile } from './models';
 
-export class ViewAllowedEmailsDataInner {
+/**
+* The referral source chosen at sign-up, if any.
+*/
+export class AccountReferrerChosen {
     /**
-    * The ID of the email address.
+    * The ID of the referral source.
     */
-    'emailAddressId'?: number;
+    'id'?: number;
     /**
-    * The email address.
+    * The name of the referral source.
     */
-    'emailAddress'?: string;
-    /**
-    * The sender.
-    */
-    'from'?: string;
+    'name'?: string;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "emailAddressId",
-            "baseName": "email_address_id",
+            "name": "id",
+            "baseName": "id",
             "type": "number"
         },
         {
-            "name": "emailAddress",
-            "baseName": "email_address",
-            "type": "string"
-        },
-        {
-            "name": "from",
-            "baseName": "from",
+            "name": "name",
+            "baseName": "name",
             "type": "string"
         }    ];
 
     static getAttributeTypeMap() {
-        return ViewAllowedEmailsDataInner.attributeTypeMap;
+        return AccountReferrerChosen.attributeTypeMap;
     }
 }
 

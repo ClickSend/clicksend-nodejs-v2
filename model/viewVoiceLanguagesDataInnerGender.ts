@@ -12,32 +12,18 @@
 
 import { RequestFile } from './models';
 
-export class ViewStrippedStringRulesDataDataInner {
-    /**
-    * The ID of the rule.
-    */
-    'ruleId'?: number;
-    /**
-    * The string to be stripped.
-    */
-    'stripString'?: string;
+/**
+* The gender(s) available for this language. Returned as a single string when only one gender is available, or an array of strings when more than one is available.
+*/
+export class ViewVoiceLanguagesDataInnerGender {
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-        {
-            "name": "ruleId",
-            "baseName": "rule_id",
-            "type": "number"
-        },
-        {
-            "name": "stripString",
-            "baseName": "strip_string",
-            "type": "string"
-        }    ];
+    ];
 
     static getAttributeTypeMap() {
-        return ViewStrippedStringRulesDataDataInner.attributeTypeMap;
+        return ViewVoiceLanguagesDataInnerGender.attributeTypeMap;
     }
 }
 

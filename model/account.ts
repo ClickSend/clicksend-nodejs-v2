@@ -11,6 +11,7 @@
  */
 
 import { RequestFile } from './models';
+import { AccountReferrerChosen } from './accountReferrerChosen';
 import { Currency } from './currency';
 import { Subaccount } from './subaccount';
 
@@ -35,6 +36,10 @@ export class Account {
     * Flag indicating if the user account is banned.
     */
     'banned'?: number;
+    /**
+    * The Unix timestamp of when the account was created.
+    */
+    'dateSignUp'?: number;
     /**
     * The balance of the user\'s account.
     */
@@ -76,9 +81,17 @@ export class Account {
     */
     'accountBillingMobile'?: string;
     /**
+    * The account\'s priority tier.
+    */
+    'priority'?: number;
+    /**
     * The country of the user.
     */
     'country'?: string;
+    /**
+    * The country the user is currently connecting from, based on IP address.
+    */
+    'countryIp'?: string;
     /**
     * The default country for SMS.
     */
@@ -127,8 +140,37 @@ export class Account {
     * The pricing tier used to determine the cost per message.
     */
     'priceRate'?: number;
+    /**
+    * Flag indicating if uploaded media is kept private.
+    */
+    'privateUploads'?: number;
+    /**
+    * The quality setting used for outgoing faxes.
+    */
+    'faxQuality'?: number;
+    /**
+    * Flag indicating if your number is hidden on outgoing SMS.
+    */
+    'settingSmsHideYourNumber'?: number;
+    /**
+    * Flag indicating if the business name is hidden on outgoing SMS.
+    */
+    'settingSmsHideBusinessName'?: number;
+    /**
+    * The pricing variant applied to the account.
+    */
+    'pricingVariant'?: number;
+    /**
+    * Flag indicating if the account is currently on a trial.
+    */
+    'onTrial'?: number;
+    /**
+    * The date the trial expires, if the account is on a trial.
+    */
+    'trialExpiry'?: string | null;
     'currency'?: Currency;
     'subaccount'?: Subaccount;
+    'referrerChosen'?: AccountReferrerChosen | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -156,6 +198,11 @@ export class Account {
         {
             "name": "banned",
             "baseName": "banned",
+            "type": "number"
+        },
+        {
+            "name": "dateSignUp",
+            "baseName": "date_sign_up",
             "type": "number"
         },
         {
@@ -209,8 +256,18 @@ export class Account {
             "type": "string"
         },
         {
+            "name": "priority",
+            "baseName": "priority",
+            "type": "number"
+        },
+        {
             "name": "country",
             "baseName": "country",
+            "type": "string"
+        },
+        {
+            "name": "countryIp",
+            "baseName": "country_ip",
             "type": "string"
         },
         {
@@ -274,6 +331,41 @@ export class Account {
             "type": "number"
         },
         {
+            "name": "privateUploads",
+            "baseName": "private_uploads",
+            "type": "number"
+        },
+        {
+            "name": "faxQuality",
+            "baseName": "fax_quality",
+            "type": "number"
+        },
+        {
+            "name": "settingSmsHideYourNumber",
+            "baseName": "setting_sms_hide_your_number",
+            "type": "number"
+        },
+        {
+            "name": "settingSmsHideBusinessName",
+            "baseName": "setting_sms_hide_business_name",
+            "type": "number"
+        },
+        {
+            "name": "pricingVariant",
+            "baseName": "pricing_variant",
+            "type": "number"
+        },
+        {
+            "name": "onTrial",
+            "baseName": "on_trial",
+            "type": "number"
+        },
+        {
+            "name": "trialExpiry",
+            "baseName": "trial_expiry",
+            "type": "string"
+        },
+        {
             "name": "currency",
             "baseName": "_currency",
             "type": "Currency"
@@ -282,6 +374,11 @@ export class Account {
             "name": "subaccount",
             "baseName": "_subaccount",
             "type": "Subaccount"
+        },
+        {
+            "name": "referrerChosen",
+            "baseName": "_referrer_chosen",
+            "type": "AccountReferrerChosen"
         }    ];
 
     static getAttributeTypeMap() {

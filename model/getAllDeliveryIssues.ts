@@ -11,7 +11,7 @@
  */
 
 import { RequestFile } from './models';
-import { DeliveryIssue } from './deliveryIssue';
+import { GetAllDeliveryIssuesData } from './getAllDeliveryIssuesData';
 
 export class GetAllDeliveryIssues {
     /**
@@ -26,7 +26,7 @@ export class GetAllDeliveryIssues {
     * A message describing the outcome of the operation.
     */
     'responseMsg'?: string;
-    'data'?: Array<DeliveryIssue>;
+    'data'?: GetAllDeliveryIssuesData;
 
     static discriminator: string | undefined = undefined;
 
@@ -49,7 +49,7 @@ export class GetAllDeliveryIssues {
         {
             "name": "data",
             "baseName": "data",
-            "type": "Array<DeliveryIssue>"
+            "type": "GetAllDeliveryIssuesData"
         }    ];
 
     static getAttributeTypeMap() {
