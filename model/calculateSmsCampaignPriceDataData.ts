@@ -24,7 +24,7 @@ export class CalculateSmsCampaignPriceDataData {
     /**
     * The schedule timestamp.
     */
-    'schedule'?: string;
+    'schedule'?: number;
 
     static discriminator: string | undefined = undefined;
 
@@ -42,7 +42,7 @@ export class CalculateSmsCampaignPriceDataData {
         {
             "name": "schedule",
             "baseName": "schedule",
-            "type": "string"
+            "type": "number"
         }    ];
 
     static getAttributeTypeMap() {

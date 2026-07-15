@@ -22,7 +22,7 @@ export class CalculateSmsCampaignPriceData {
     /**
     * The total price of the SMS campaign.
     */
-    'totalPrice'?: number;
+    'totalPrice'?: string;
     'data'?: CalculateSmsCampaignPriceDataData;
     'currency'?: Currency;
 
@@ -37,7 +37,7 @@ export class CalculateSmsCampaignPriceData {
         {
             "name": "totalPrice",
             "baseName": "total_price",
-            "type": "number"
+            "type": "string"
         },
         {
             "name": "data",

@@ -50,13 +50,13 @@ export class Contact {
     */
     'custom4'?: string;
     /**
-    * The date when the contact was added. Returned as a plain string rather than a strict date-time since the API sometimes returns a raw Unix timestamp (e.g. \"1783997542\") instead of ISO 8601.
+    * The date when the contact was added, as a <a href=\"http://help.clicksend.com/what-is-a-unix-timestamp\" target=\"_blank\">Unix timestamp</a>.
     */
-    'dateAdded'?: string;
+    'dateAdded'?: number;
     /**
-    * The date when the contact was last updated. Returned as a plain string rather than a strict date-time since the API sometimes returns a raw Unix timestamp (e.g. \"1783997542\") instead of ISO 8601.
+    * The date when the contact was last updated, as a <a href=\"http://help.clicksend.com/what-is-a-unix-timestamp\" target=\"_blank\">Unix timestamp</a>.
     */
-    'dateUpdated'?: string;
+    'dateUpdated'?: number;
     /**
     * The fax number of the contact.
     */
@@ -149,12 +149,12 @@ export class Contact {
         {
             "name": "dateAdded",
             "baseName": "date_added",
-            "type": "string"
+            "type": "number"
         },
         {
             "name": "dateUpdated",
             "baseName": "date_updated",
-            "type": "string"
+            "type": "number"
         },
         {
             "name": "faxNumber",

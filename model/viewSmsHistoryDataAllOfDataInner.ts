@@ -64,7 +64,7 @@ export class ViewSmsHistoryDataAllOfDataInner {
     /**
     * The number of parts the message was broken into. To look at how many parts your message is broken down into, use the <a href=\"http://smscharactercount.com/\" target=\"_blank\"><strong>SMS Character Count</strong></a>.
     */
-    'messageParts'?: string;
+    'messageParts'?: number;
     /**
     * The price of this message. This depends on the total number of parts of the message.
     */
@@ -180,7 +180,7 @@ export class ViewSmsHistoryDataAllOfDataInner {
         {
             "name": "messageParts",
             "baseName": "message_parts",
-            "type": "string"
+            "type": "number"
         },
         {
             "name": "messagePrice",

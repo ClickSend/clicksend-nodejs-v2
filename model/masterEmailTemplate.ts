@@ -25,7 +25,7 @@ export class MasterEmailTemplate {
     /**
     * The date the template was added.
     */
-    'dateAdded'?: string;
+    'dateAdded'?: number;
     /**
     * The body of the template.
     */
@@ -48,7 +48,7 @@ export class MasterEmailTemplate {
         {
             "name": "dateAdded",
             "baseName": "date_added",
-            "type": "string"
+            "type": "number"
         },
         {
             "name": "body",

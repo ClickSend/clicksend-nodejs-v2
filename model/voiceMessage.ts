@@ -11,6 +11,7 @@
  */
 
 import { RequestFile } from './models';
+import { VoiceMessageSchedule } from './voiceMessageSchedule';
 
 export class VoiceMessage {
     /**
@@ -49,10 +50,7 @@ export class VoiceMessage {
     * The voice of the message.
     */
     'voice'?: string;
-    /**
-    * The timestamp when the message should be sent. Returned as a string since it may be an empty string when no schedule was set.
-    */
-    'schedule'?: string;
+    'schedule'?: VoiceMessageSchedule;
     /**
     * The ID of the message.
     */
@@ -60,7 +58,7 @@ export class VoiceMessage {
     /**
     * The number of parts in the message.
     */
-    'messageParts'?: string;
+    'messageParts'?: number;
     /**
     * The price of the message.
     */
@@ -169,7 +167,7 @@ export class VoiceMessage {
         {
             "name": "schedule",
             "baseName": "schedule",
-            "type": "string"
+            "type": "VoiceMessageSchedule"
         },
         {
             "name": "messageId",
@@ -179,7 +177,7 @@ export class VoiceMessage {
         {
             "name": "messageParts",
             "baseName": "message_parts",
-            "type": "string"
+            "type": "number"
         },
         {
             "name": "messagePrice",

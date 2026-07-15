@@ -34,7 +34,7 @@ export class GlobalSending {
     /**
     * The date when the country was agreed upon.
     */
-    'agreedAt'?: string | null;
+    'agreedAt'?: number | null;
     'registrationEntity'?: AccountReferrerChosen | null;
     'registrationStatus'?: GlobalSendingRegistrationStatus;
     /**
@@ -108,7 +108,7 @@ export class GlobalSending {
         {
             "name": "agreedAt",
             "baseName": "agreed_at",
-            "type": "string"
+            "type": "number"
         },
         {
             "name": "registrationEntity",

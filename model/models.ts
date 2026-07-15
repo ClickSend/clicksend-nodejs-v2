@@ -313,10 +313,7 @@ export * from './viewAccountDetails';
 export * from './viewAccountUsage';
 export * from './viewAccountUsageData';
 export * from './viewAccountUsageDataEmailInner';
-export * from './viewAccountUsageDataEmailTotal';
-export * from './viewAccountUsageDataMmsInner';
 export * from './viewAccountUsageDataSmsInner';
-export * from './viewAccountUsageDataSmsTotal';
 export * from './viewAllEmailCampaigns';
 export * from './viewAllEmailCampaignsData';
 export * from './viewAllMmsCampaigns';
@@ -439,6 +436,7 @@ export * from './viewYourReturnAddresses';
 export * from './viewYourReturnAddressesData';
 export * from './voiceDeliveryReceiptRule';
 export * from './voiceMessage';
+export * from './voiceMessageSchedule';
 export * from './voiceReceipt';
 
 import * as fs from 'fs';
@@ -767,10 +765,7 @@ import { ViewAccountDetails } from './viewAccountDetails';
 import { ViewAccountUsage } from './viewAccountUsage';
 import { ViewAccountUsageData } from './viewAccountUsageData';
 import { ViewAccountUsageDataEmailInner } from './viewAccountUsageDataEmailInner';
-import { ViewAccountUsageDataEmailTotal } from './viewAccountUsageDataEmailTotal';
-import { ViewAccountUsageDataMmsInner } from './viewAccountUsageDataMmsInner';
 import { ViewAccountUsageDataSmsInner } from './viewAccountUsageDataSmsInner';
-import { ViewAccountUsageDataSmsTotal } from './viewAccountUsageDataSmsTotal';
 import { ViewAllEmailCampaigns } from './viewAllEmailCampaigns';
 import { ViewAllEmailCampaignsData } from './viewAllEmailCampaignsData';
 import { ViewAllMmsCampaigns } from './viewAllMmsCampaigns';
@@ -893,6 +888,7 @@ import { ViewYourReturnAddresses } from './viewYourReturnAddresses';
 import { ViewYourReturnAddressesData } from './viewYourReturnAddressesData';
 import { VoiceDeliveryReceiptRule } from './voiceDeliveryReceiptRule';
 import { VoiceMessage } from './voiceMessage';
+import { VoiceMessageSchedule } from './voiceMessageSchedule';
 import { VoiceReceipt } from './voiceReceipt';
 
 /* tslint:disable:no-unused-variable */
@@ -1239,10 +1235,7 @@ let typeMap: {[index: string]: any} = {
     "ViewAccountUsage": ViewAccountUsage,
     "ViewAccountUsageData": ViewAccountUsageData,
     "ViewAccountUsageDataEmailInner": ViewAccountUsageDataEmailInner,
-    "ViewAccountUsageDataEmailTotal": ViewAccountUsageDataEmailTotal,
-    "ViewAccountUsageDataMmsInner": ViewAccountUsageDataMmsInner,
     "ViewAccountUsageDataSmsInner": ViewAccountUsageDataSmsInner,
-    "ViewAccountUsageDataSmsTotal": ViewAccountUsageDataSmsTotal,
     "ViewAllEmailCampaigns": ViewAllEmailCampaigns,
     "ViewAllEmailCampaignsData": ViewAllEmailCampaignsData,
     "ViewAllMmsCampaigns": ViewAllMmsCampaigns,
@@ -1365,6 +1358,7 @@ let typeMap: {[index: string]: any} = {
     "ViewYourReturnAddressesData": ViewYourReturnAddressesData,
     "VoiceDeliveryReceiptRule": VoiceDeliveryReceiptRule,
     "VoiceMessage": VoiceMessage,
+    "VoiceMessageSchedule": VoiceMessageSchedule,
     "VoiceReceipt": VoiceReceipt,
 }
 

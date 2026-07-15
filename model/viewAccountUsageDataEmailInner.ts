@@ -25,7 +25,7 @@ export class ViewAccountUsageDataEmailInner {
     * The total count of emails.
     */
     'totalCount'?: number;
-    'totalPrice'?: string;
+    'totalPrice'?: number;
     /**
     * Optional notes.
     */
@@ -52,7 +52,7 @@ export class ViewAccountUsageDataEmailInner {
         {
             "name": "totalPrice",
             "baseName": "total_price",
-            "type": "string"
+            "type": "number"
         },
         {
             "name": "notes",

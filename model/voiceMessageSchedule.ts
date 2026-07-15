@@ -12,32 +12,18 @@
 
 import { RequestFile } from './models';
 
-export class ViewAccountUsageDataSmsTotal {
-    /**
-    * The total count of SMS.
-    */
-    'count'?: string;
-    /**
-    * The total price of SMS.
-    */
-    'price'?: string;
+/**
+* The timestamp when the message should be sent, as a <a href=\"http://help.clicksend.com/what-is-a-unix-timestamp\" target=\"_blank\">Unix timestamp</a>. Returned as an empty string when no schedule was set.
+*/
+export class VoiceMessageSchedule {
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-        {
-            "name": "count",
-            "baseName": "count",
-            "type": "string"
-        },
-        {
-            "name": "price",
-            "baseName": "price",
-            "type": "string"
-        }    ];
+    ];
 
     static getAttributeTypeMap() {
-        return ViewAccountUsageDataSmsTotal.attributeTypeMap;
+        return VoiceMessageSchedule.attributeTypeMap;
     }
 }
 

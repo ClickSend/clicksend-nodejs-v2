@@ -48,7 +48,7 @@ export class SmsCampaign {
     /**
     * The scheduled date of the message. It is in <a href=\"http://help.clicksend.com/what-is-a-unix-timestamp\" target=\"_blank\">Unix format</a>.
     */
-    'schedule'?: string;
+    'schedule'?: number;
     /**
     * The status of the SMS. Available statuses are:    - _Approved_: The SMS campaign has been approved and is ready to be sent.   - _Cancelled_: The SMS campaign was scheduled but has been cancelled before sending.   - _Draft_: The SMS campaign is saved as a draft and has not been sent.   - _Failed_: The SMS campaign failed to send due to an issue.   - _Queued_: The SMS campaign is waiting to be sent.   - _Scheduled_: The SMS campaign is set to be sent at a later time.   - _Sending_: The SMS campaign is currently being sent.   - _Sent_: The SMS campaign has been sent, but this does not guarantee that all messages were successfully delivered.   - _WaitApproval_: The SMS campaign is awaiting approval from ClickSend, which may take a few minutes.
     */
@@ -56,7 +56,7 @@ export class SmsCampaign {
     /**
     * The date you created the SMS campaign. It is in <a href=\"http://help.clicksend.com/what-is-a-unix-timestamp\" target=\"_blank\">Unix format</a>.
     */
-    'dateAdded'?: string;
+    'dateAdded'?: number;
     /**
     * The custom note that was added when creating or updating the SMS campaign.
     */
@@ -127,7 +127,7 @@ export class SmsCampaign {
         {
             "name": "schedule",
             "baseName": "schedule",
-            "type": "string"
+            "type": "number"
         },
         {
             "name": "status",
@@ -137,7 +137,7 @@ export class SmsCampaign {
         {
             "name": "dateAdded",
             "baseName": "date_added",
-            "type": "string"
+            "type": "number"
         },
         {
             "name": "customString",

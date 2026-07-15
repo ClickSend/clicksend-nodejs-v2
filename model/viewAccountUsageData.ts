@@ -13,26 +13,23 @@
 import { RequestFile } from './models';
 import { Currency } from './currency';
 import { ViewAccountUsageDataEmailInner } from './viewAccountUsageDataEmailInner';
-import { ViewAccountUsageDataEmailTotal } from './viewAccountUsageDataEmailTotal';
-import { ViewAccountUsageDataMmsInner } from './viewAccountUsageDataMmsInner';
 import { ViewAccountUsageDataSmsInner } from './viewAccountUsageDataSmsInner';
-import { ViewAccountUsageDataSmsTotal } from './viewAccountUsageDataSmsTotal';
 import { ViewVoiceStatisticsDataTotalOutbound } from './viewVoiceStatisticsDataTotalOutbound';
 
 export class ViewAccountUsageData {
     'sms'?: Array<ViewAccountUsageDataSmsInner>;
-    'mms'?: Array<ViewAccountUsageDataMmsInner>;
-    'voice'?: Array<ViewAccountUsageDataMmsInner>;
-    'fax'?: Array<ViewAccountUsageDataMmsInner>;
-    'post'?: Array<ViewAccountUsageDataMmsInner>;
+    'mms'?: Array<ViewAccountUsageDataSmsInner>;
+    'voice'?: Array<ViewAccountUsageDataSmsInner>;
+    'fax'?: Array<ViewAccountUsageDataSmsInner>;
+    'post'?: Array<ViewAccountUsageDataSmsInner>;
     'email'?: Array<ViewAccountUsageDataEmailInner>;
     'emailTransactional'?: Array<ViewAccountUsageDataEmailInner>;
-    'postcards'?: Array<ViewAccountUsageDataMmsInner>;
-    'smsTotal'?: ViewAccountUsageDataSmsTotal;
-    'voiceTotal'?: ViewAccountUsageDataSmsTotal;
-    'faxTotal'?: ViewAccountUsageDataSmsTotal;
-    'postTotal'?: ViewAccountUsageDataSmsTotal;
-    'emailTotal'?: ViewAccountUsageDataEmailTotal;
+    'postcards'?: Array<ViewAccountUsageDataSmsInner>;
+    'smsTotal'?: ViewVoiceStatisticsDataTotalOutbound;
+    'voiceTotal'?: ViewVoiceStatisticsDataTotalOutbound;
+    'faxTotal'?: ViewVoiceStatisticsDataTotalOutbound;
+    'postTotal'?: ViewVoiceStatisticsDataTotalOutbound;
+    'emailTotal'?: ViewVoiceStatisticsDataTotalOutbound;
     'mmsTotal'?: ViewVoiceStatisticsDataTotalOutbound;
     'emailTransactionalTotal'?: ViewVoiceStatisticsDataTotalOutbound;
     'postcardsTotal'?: ViewVoiceStatisticsDataTotalOutbound;
@@ -49,22 +46,22 @@ export class ViewAccountUsageData {
         {
             "name": "mms",
             "baseName": "mms",
-            "type": "Array<ViewAccountUsageDataMmsInner>"
+            "type": "Array<ViewAccountUsageDataSmsInner>"
         },
         {
             "name": "voice",
             "baseName": "voice",
-            "type": "Array<ViewAccountUsageDataMmsInner>"
+            "type": "Array<ViewAccountUsageDataSmsInner>"
         },
         {
             "name": "fax",
             "baseName": "fax",
-            "type": "Array<ViewAccountUsageDataMmsInner>"
+            "type": "Array<ViewAccountUsageDataSmsInner>"
         },
         {
             "name": "post",
             "baseName": "post",
-            "type": "Array<ViewAccountUsageDataMmsInner>"
+            "type": "Array<ViewAccountUsageDataSmsInner>"
         },
         {
             "name": "email",
@@ -79,32 +76,32 @@ export class ViewAccountUsageData {
         {
             "name": "postcards",
             "baseName": "postcards",
-            "type": "Array<ViewAccountUsageDataMmsInner>"
+            "type": "Array<ViewAccountUsageDataSmsInner>"
         },
         {
             "name": "smsTotal",
             "baseName": "sms_total",
-            "type": "ViewAccountUsageDataSmsTotal"
+            "type": "ViewVoiceStatisticsDataTotalOutbound"
         },
         {
             "name": "voiceTotal",
             "baseName": "voice_total",
-            "type": "ViewAccountUsageDataSmsTotal"
+            "type": "ViewVoiceStatisticsDataTotalOutbound"
         },
         {
             "name": "faxTotal",
             "baseName": "fax_total",
-            "type": "ViewAccountUsageDataSmsTotal"
+            "type": "ViewVoiceStatisticsDataTotalOutbound"
         },
         {
             "name": "postTotal",
             "baseName": "post_total",
-            "type": "ViewAccountUsageDataSmsTotal"
+            "type": "ViewVoiceStatisticsDataTotalOutbound"
         },
         {
             "name": "emailTotal",
             "baseName": "email_total",
-            "type": "ViewAccountUsageDataEmailTotal"
+            "type": "ViewVoiceStatisticsDataTotalOutbound"
         },
         {
             "name": "mmsTotal",
