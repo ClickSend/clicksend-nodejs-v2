@@ -11,16 +11,14 @@ npm install clicksend
 ## Getting Started
 
 ```typescript
-import { Configuration, SmsApi } from 'clicksend';
+import { SmsApi } from 'clicksend';
 
-const configuration = new Configuration({
-  username: process.env.CLICKSEND_USERNAME,
-  password: process.env.CLICKSEND_API_KEY,
-});
+const smsApi = new SmsApi(
+  process.env.CLICKSEND_USERNAME,
+  process.env.CLICKSEND_API_KEY
+);
 
-const smsApi = new SmsApi(configuration);
-
-smsApi.smsSendPost({
+smsApi.sendSms(undefined, {
   messages: [
     {
       source: 'sdk',
@@ -28,8 +26,51 @@ smsApi.smsSendPost({
       to: '+61411111111',
     },
   ],
-}).then((response) => {
-  console.log(response.data);
+}).then(({ body }) => {
+  console.log(body);
+});
+```
+
+## More Examples
+
+### View account details
+
+```typescript
+import { ManagementApi } from 'clicksend';
+
+const managementApi = new ManagementApi(
+  process.env.CLICKSEND_USERNAME,
+  process.env.CLICKSEND_API_KEY
+);
+
+managementApi.viewAccountDetails().then(({ body }) => {
+  console.log(body);
+});
+```
+
+### Send an MMS
+
+```typescript
+import { MmsApi } from 'clicksend';
+
+const mmsApi = new MmsApi(
+  process.env.CLICKSEND_USERNAME,
+  process.env.CLICKSEND_API_KEY
+);
+
+mmsApi.sendMms(undefined, {
+  mediaFile: 'https://clicksend.com/logo.png',
+  messages: [
+    {
+      to: '+61411111111',
+      from: 'sdk',
+      subject: 'Hello',
+      body: 'Hello from ClickSend!',
+      source: 'sdk',
+    },
+  ],
+}).then(({ body }) => {
+  console.log(body);
 });
 ```
 
