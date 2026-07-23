@@ -1262,7 +1262,7 @@ export class SmsApi {
             uri: localVarPath,
             useQuerystring: this._useQuerystring,
             json: true,
-            body: ObjectSerializer.serialize(sendSmsRequest, "SendSmsRequest")
+            body: ObjectSerializer.serialize((sendSmsRequest && sendSmsRequest.messages) ? { ...sendSmsRequest, messages: sendSmsRequest.messages.map(m => ({ source: 'sdk-nodejs', ...m })) } : sendSmsRequest, "SendSmsRequest")
         };
 
         let authenticationPromise = Promise.resolve();

@@ -301,7 +301,7 @@ export class MmsApi {
             uri: localVarPath,
             useQuerystring: this._useQuerystring,
             json: true,
-            body: ObjectSerializer.serialize(sendMmsRequest, "SendMmsRequest")
+            body: ObjectSerializer.serialize((sendMmsRequest && sendMmsRequest.messages) ? { ...sendMmsRequest, messages: sendMmsRequest.messages.map(m => ({ source: 'sdk-nodejs', ...m })) } : sendMmsRequest, "SendMmsRequest")
         };
 
         let authenticationPromise = Promise.resolve();

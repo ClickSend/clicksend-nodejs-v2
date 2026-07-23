@@ -542,7 +542,7 @@ export class VoiceMessagingApi {
             uri: localVarPath,
             useQuerystring: this._useQuerystring,
             json: true,
-            body: ObjectSerializer.serialize(sendVoiceMessageRequest, "SendVoiceMessageRequest")
+            body: ObjectSerializer.serialize((sendVoiceMessageRequest && sendVoiceMessageRequest.messages) ? { ...sendVoiceMessageRequest, messages: sendVoiceMessageRequest.messages.map(m => ({ source: 'sdk-nodejs', ...m })) } : sendVoiceMessageRequest, "SendVoiceMessageRequest")
         };
 
         let authenticationPromise = Promise.resolve();
