@@ -28,7 +28,7 @@ export class SendSmsRequestMessagesInner {
     /**
     * The source of the request. For example, the name of your application. It\'s used to identify messages sent from various applications.
     */
-    'source'?: string;
+    'source'?: string = 'sdk';
     /**
     * The time you want the message to be sent. It should be in <a href=\"http://help.clicksend.com/what-is-a-unix-timestamp\" target=\"_blank\">Unix format</a>.
     */

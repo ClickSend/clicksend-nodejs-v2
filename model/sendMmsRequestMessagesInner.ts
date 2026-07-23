@@ -13,7 +13,7 @@
 import { RequestFile } from './models';
 
 export class SendMmsRequestMessagesInner {
-    'source'?: string;
+    'source'?: string = 'sdk';
     'to'?: string;
     'from'?: string;
     'subject'?: string;

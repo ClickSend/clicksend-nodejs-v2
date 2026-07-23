@@ -13,7 +13,7 @@
 import { RequestFile } from './models';
 
 export class SendVoiceMessageRequestMessagesInner {
-    'source'?: string;
+    'source'?: string = 'sdk';
     'body'?: string;
     'to'?: string;
     'voice'?: string;
