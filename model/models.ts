@@ -17,19 +17,12 @@ export * from './calculateEmailCampaignPriceRequest';
 export * from './calculateEmailPrice';
 export * from './calculateEmailPriceData';
 export * from './calculateEmailPriceRequest';
-export * from './calculateFaxPrice';
-export * from './calculateFaxPriceRequest';
-export * from './calculateFaxPriceRequestMessagesInner';
-export * from './calculateLetterPrice';
-export * from './calculateLetterPriceData';
-export * from './calculateLetterPriceRequest';
 export * from './calculateMmsCampaignPrice';
 export * from './calculateMmsCampaignPriceData';
 export * from './calculateMmsCampaignPriceDataData';
 export * from './calculateMmsPrice';
 export * from './calculateMmsPriceRequest';
 export * from './calculateMmsPriceRequestMessagesInner';
-export * from './calculatePostcardPrice';
 export * from './calculateSmsCampaignPrice';
 export * from './calculateSmsCampaignPriceData';
 export * from './calculateSmsCampaignPriceDataData';
@@ -53,8 +46,6 @@ export * from './cancelAllVoiceMessages';
 export * from './cancelEmailCampaign';
 export * from './cancelEmailCampaignRequest';
 export * from './cancelMmsCampaign';
-export * from './cancelScheduledLetter';
-export * from './cancelScheduledPostcard';
 export * from './cancelSms';
 export * from './cancelSmsCampaign';
 export * from './cancelVoiceMessage';
@@ -73,10 +64,6 @@ export * from './createDeliveryIssueRequest';
 export * from './createEmailDeliveryReceiptRule';
 export * from './createEmailTemplate';
 export * from './createEmailTemplateRequest';
-export * from './createFaxDeliveryReceiptRule';
-export * from './createFaxDeliveryReceiptRuleRequest';
-export * from './createFaxInboundRule';
-export * from './createFaxInboundRuleRequest';
 export * from './createList';
 export * from './createListRequest';
 export * from './createNewContact';
@@ -113,8 +100,6 @@ export * from './deleteAllowedEmailAddress';
 export * from './deleteContact';
 export * from './deleteEmailDeliveryReceiptRule';
 export * from './deleteEmailTemplate';
-export * from './deleteFaxDeliveryReceiptRule';
-export * from './deleteFaxInboundRule';
 export * from './deleteList';
 export * from './deleteReturnAddress';
 export * from './deleteSmsDeliveryReceiptRule';
@@ -124,22 +109,15 @@ export * from './deleteStrippedStringRule';
 export * from './deleteSubaccount';
 export * from './deleteVoiceDeliveryReceiptRule';
 export * from './deliveryIssue';
-export * from './detectAddress';
-export * from './detectAddressData';
 export * from './emailAddress';
 export * from './emailCampaign';
 export * from './emailCampaignHistory';
 export * from './emailDeliveryReceiptRule';
 export * from './exportEmailHistory';
-export * from './exportLetterHistory';
 export * from './exportMmsHistory';
-export * from './exportPostcardHistory';
 export * from './exportSmsHistory';
 export * from './exportSmsHistoryData';
 export * from './exportVoiceHistory';
-export * from './fax';
-export * from './faxDeliveryReceiptRule';
-export * from './faxReceipt';
 export * from './forgotPassword';
 export * from './forgotPasswordRequest';
 export * from './forgotUsername';
@@ -168,7 +146,6 @@ export * from './globalSendingRegistrationStatus';
 export * from './importContacts';
 export * from './importContactsData';
 export * from './importContactsRequest';
-export * from './inboundFaxRule';
 export * from './inboundSms';
 export * from './inboundSmsTest';
 export * from './listAlphaTags';
@@ -194,13 +171,10 @@ export * from './model400Error';
 export * from './ownNumber';
 export * from './pagination';
 export * from './postReturnAddress';
-export * from './postcardRecipient';
-export * from './postcardRecipientReturnAddress';
 export * from './purchaseDedicatedNumber';
 export * from './purchaseDedicatedNumberData';
 export * from './purchaseRechargePackage';
 export * from './purchaseRechargePackageData';
-export * from './recipient';
 export * from './registerNumbers';
 export * from './registerNumbersRequest';
 export * from './removeDuplicateContacts';
@@ -232,23 +206,12 @@ export * from './sendEmailVerificationToken';
 export * from './sendEmailVerificationTokenRequest';
 export * from './sendEmailVerificationTokenRequestFrom';
 export * from './sendEmailVerificationTokenRequestToInner';
-export * from './sendFax';
-export * from './sendFaxData';
-export * from './sendFaxRequest';
-export * from './sendFaxRequestMessagesInner';
-export * from './sendLetter';
-export * from './sendLetterData';
-export * from './sendLetterRequest';
 export * from './sendMms';
 export * from './sendMmsCampaign';
 export * from './sendMmsCampaignRequest';
 export * from './sendMmsData';
 export * from './sendMmsRequest';
 export * from './sendMmsRequestMessagesInner';
-export * from './sendPostcard';
-export * from './sendPostcardData';
-export * from './sendPostcardRequest';
-export * from './sendPostcardRequestRecipientsInner';
 export * from './sendSms';
 export * from './sendSmsCampaign';
 export * from './sendSmsCampaignRequest';
@@ -282,9 +245,6 @@ export * from './updateEmailCampaignRequest';
 export * from './updateEmailDeliveryReceiptRule';
 export * from './updateEmailTemplate';
 export * from './updateEmailTemplateRequest';
-export * from './updateFaxDeliveryReceiptRule';
-export * from './updateFaxDeliveryReceiptRuleRequest';
-export * from './updateFaxInboundRule';
 export * from './updateList';
 export * from './updateMmsCampaign';
 export * from './updatePaymentInfo';
@@ -343,20 +303,8 @@ export * from './viewEmailTemplate';
 export * from './viewEmailTemplates';
 export * from './viewEmailTemplatesData';
 export * from './viewEmailTemplatesDataDataInner';
-export * from './viewFaxDeliveryReceiptRule';
-export * from './viewFaxDeliveryReceiptRules';
-export * from './viewFaxDeliveryReceiptRulesData';
-export * from './viewFaxHistory';
-export * from './viewFaxHistoryData';
-export * from './viewFaxInboundRule';
-export * from './viewFaxInboundRules';
-export * from './viewFaxInboundRulesData';
-export * from './viewFaxReceipts';
-export * from './viewFaxReceiptsData';
 export * from './viewInboundSms';
 export * from './viewInboundSmsData';
-export * from './viewLetterHistory';
-export * from './viewLetterHistoryData';
 export * from './viewListContacts';
 export * from './viewListContactsData';
 export * from './viewLists';
@@ -368,8 +316,6 @@ export * from './viewMmsCampaign';
 export * from './viewMmsHistory';
 export * from './viewMmsHistoryData';
 export * from './viewMmsHistoryDataAllOfDataInner';
-export * from './viewPostcardHistory';
-export * from './viewPostcardHistoryData';
 export * from './viewRechargePackages';
 export * from './viewRechargePackagesData';
 export * from './viewRechargePackagesDataPackagesInner';
@@ -396,7 +342,6 @@ export * from './viewSmsStatisticsDataTotal';
 export * from './viewSmsTemplates';
 export * from './viewSmsTemplatesData';
 export * from './viewSpecificClientAccount';
-export * from './viewSpecificFaxReceipt';
 export * from './viewSpecificList';
 export * from './viewSpecificReturnAddress';
 export * from './viewSpecificSmsCampaign';
@@ -469,19 +414,12 @@ import { CalculateEmailCampaignPriceRequest } from './calculateEmailCampaignPric
 import { CalculateEmailPrice } from './calculateEmailPrice';
 import { CalculateEmailPriceData } from './calculateEmailPriceData';
 import { CalculateEmailPriceRequest } from './calculateEmailPriceRequest';
-import { CalculateFaxPrice } from './calculateFaxPrice';
-import { CalculateFaxPriceRequest } from './calculateFaxPriceRequest';
-import { CalculateFaxPriceRequestMessagesInner } from './calculateFaxPriceRequestMessagesInner';
-import { CalculateLetterPrice } from './calculateLetterPrice';
-import { CalculateLetterPriceData } from './calculateLetterPriceData';
-import { CalculateLetterPriceRequest } from './calculateLetterPriceRequest';
 import { CalculateMmsCampaignPrice } from './calculateMmsCampaignPrice';
 import { CalculateMmsCampaignPriceData } from './calculateMmsCampaignPriceData';
 import { CalculateMmsCampaignPriceDataData } from './calculateMmsCampaignPriceDataData';
 import { CalculateMmsPrice } from './calculateMmsPrice';
 import { CalculateMmsPriceRequest } from './calculateMmsPriceRequest';
 import { CalculateMmsPriceRequestMessagesInner } from './calculateMmsPriceRequestMessagesInner';
-import { CalculatePostcardPrice } from './calculatePostcardPrice';
 import { CalculateSmsCampaignPrice } from './calculateSmsCampaignPrice';
 import { CalculateSmsCampaignPriceData } from './calculateSmsCampaignPriceData';
 import { CalculateSmsCampaignPriceDataData } from './calculateSmsCampaignPriceDataData';
@@ -505,8 +443,6 @@ import { CancelAllVoiceMessages } from './cancelAllVoiceMessages';
 import { CancelEmailCampaign } from './cancelEmailCampaign';
 import { CancelEmailCampaignRequest } from './cancelEmailCampaignRequest';
 import { CancelMmsCampaign } from './cancelMmsCampaign';
-import { CancelScheduledLetter } from './cancelScheduledLetter';
-import { CancelScheduledPostcard } from './cancelScheduledPostcard';
 import { CancelSms } from './cancelSms';
 import { CancelSmsCampaign } from './cancelSmsCampaign';
 import { CancelVoiceMessage } from './cancelVoiceMessage';
@@ -525,10 +461,6 @@ import { CreateDeliveryIssueRequest } from './createDeliveryIssueRequest';
 import { CreateEmailDeliveryReceiptRule } from './createEmailDeliveryReceiptRule';
 import { CreateEmailTemplate } from './createEmailTemplate';
 import { CreateEmailTemplateRequest } from './createEmailTemplateRequest';
-import { CreateFaxDeliveryReceiptRule } from './createFaxDeliveryReceiptRule';
-import { CreateFaxDeliveryReceiptRuleRequest } from './createFaxDeliveryReceiptRuleRequest';
-import { CreateFaxInboundRule } from './createFaxInboundRule';
-import { CreateFaxInboundRuleRequest } from './createFaxInboundRuleRequest';
 import { CreateList } from './createList';
 import { CreateListRequest } from './createListRequest';
 import { CreateNewContact } from './createNewContact';
@@ -565,8 +497,6 @@ import { DeleteAllowedEmailAddress } from './deleteAllowedEmailAddress';
 import { DeleteContact } from './deleteContact';
 import { DeleteEmailDeliveryReceiptRule } from './deleteEmailDeliveryReceiptRule';
 import { DeleteEmailTemplate } from './deleteEmailTemplate';
-import { DeleteFaxDeliveryReceiptRule } from './deleteFaxDeliveryReceiptRule';
-import { DeleteFaxInboundRule } from './deleteFaxInboundRule';
 import { DeleteList } from './deleteList';
 import { DeleteReturnAddress } from './deleteReturnAddress';
 import { DeleteSmsDeliveryReceiptRule } from './deleteSmsDeliveryReceiptRule';
@@ -576,22 +506,15 @@ import { DeleteStrippedStringRule } from './deleteStrippedStringRule';
 import { DeleteSubaccount } from './deleteSubaccount';
 import { DeleteVoiceDeliveryReceiptRule } from './deleteVoiceDeliveryReceiptRule';
 import { DeliveryIssue } from './deliveryIssue';
-import { DetectAddress } from './detectAddress';
-import { DetectAddressData } from './detectAddressData';
 import { EmailAddress } from './emailAddress';
 import { EmailCampaign } from './emailCampaign';
 import { EmailCampaignHistory } from './emailCampaignHistory';
 import { EmailDeliveryReceiptRule } from './emailDeliveryReceiptRule';
 import { ExportEmailHistory } from './exportEmailHistory';
-import { ExportLetterHistory } from './exportLetterHistory';
 import { ExportMmsHistory } from './exportMmsHistory';
-import { ExportPostcardHistory } from './exportPostcardHistory';
 import { ExportSmsHistory } from './exportSmsHistory';
 import { ExportSmsHistoryData } from './exportSmsHistoryData';
 import { ExportVoiceHistory } from './exportVoiceHistory';
-import { Fax } from './fax';
-import { FaxDeliveryReceiptRule } from './faxDeliveryReceiptRule';
-import { FaxReceipt } from './faxReceipt';
 import { ForgotPassword } from './forgotPassword';
 import { ForgotPasswordRequest } from './forgotPasswordRequest';
 import { ForgotUsername } from './forgotUsername';
@@ -620,7 +543,6 @@ import { GlobalSendingRegistrationStatus } from './globalSendingRegistrationStat
 import { ImportContacts } from './importContacts';
 import { ImportContactsData } from './importContactsData';
 import { ImportContactsRequest } from './importContactsRequest';
-import { InboundFaxRule } from './inboundFaxRule';
 import { InboundSms } from './inboundSms';
 import { InboundSmsTest } from './inboundSmsTest';
 import { ListAlphaTags } from './listAlphaTags';
@@ -646,13 +568,10 @@ import { Model400Error } from './model400Error';
 import { OwnNumber } from './ownNumber';
 import { Pagination } from './pagination';
 import { PostReturnAddress } from './postReturnAddress';
-import { PostcardRecipient } from './postcardRecipient';
-import { PostcardRecipientReturnAddress } from './postcardRecipientReturnAddress';
 import { PurchaseDedicatedNumber } from './purchaseDedicatedNumber';
 import { PurchaseDedicatedNumberData } from './purchaseDedicatedNumberData';
 import { PurchaseRechargePackage } from './purchaseRechargePackage';
 import { PurchaseRechargePackageData } from './purchaseRechargePackageData';
-import { Recipient } from './recipient';
 import { RegisterNumbers } from './registerNumbers';
 import { RegisterNumbersRequest } from './registerNumbersRequest';
 import { RemoveDuplicateContacts } from './removeDuplicateContacts';
@@ -684,23 +603,12 @@ import { SendEmailVerificationToken } from './sendEmailVerificationToken';
 import { SendEmailVerificationTokenRequest } from './sendEmailVerificationTokenRequest';
 import { SendEmailVerificationTokenRequestFrom } from './sendEmailVerificationTokenRequestFrom';
 import { SendEmailVerificationTokenRequestToInner } from './sendEmailVerificationTokenRequestToInner';
-import { SendFax } from './sendFax';
-import { SendFaxData } from './sendFaxData';
-import { SendFaxRequest } from './sendFaxRequest';
-import { SendFaxRequestMessagesInner } from './sendFaxRequestMessagesInner';
-import { SendLetter } from './sendLetter';
-import { SendLetterData } from './sendLetterData';
-import { SendLetterRequest } from './sendLetterRequest';
 import { SendMms } from './sendMms';
 import { SendMmsCampaign } from './sendMmsCampaign';
 import { SendMmsCampaignRequest } from './sendMmsCampaignRequest';
 import { SendMmsData } from './sendMmsData';
 import { SendMmsRequest } from './sendMmsRequest';
 import { SendMmsRequestMessagesInner } from './sendMmsRequestMessagesInner';
-import { SendPostcard } from './sendPostcard';
-import { SendPostcardData } from './sendPostcardData';
-import { SendPostcardRequest } from './sendPostcardRequest';
-import { SendPostcardRequestRecipientsInner } from './sendPostcardRequestRecipientsInner';
 import { SendSms } from './sendSms';
 import { SendSmsCampaign } from './sendSmsCampaign';
 import { SendSmsCampaignRequest } from './sendSmsCampaignRequest';
@@ -734,9 +642,6 @@ import { UpdateEmailCampaignRequest } from './updateEmailCampaignRequest';
 import { UpdateEmailDeliveryReceiptRule } from './updateEmailDeliveryReceiptRule';
 import { UpdateEmailTemplate } from './updateEmailTemplate';
 import { UpdateEmailTemplateRequest } from './updateEmailTemplateRequest';
-import { UpdateFaxDeliveryReceiptRule } from './updateFaxDeliveryReceiptRule';
-import { UpdateFaxDeliveryReceiptRuleRequest } from './updateFaxDeliveryReceiptRuleRequest';
-import { UpdateFaxInboundRule } from './updateFaxInboundRule';
 import { UpdateList } from './updateList';
 import { UpdateMmsCampaign } from './updateMmsCampaign';
 import { UpdatePaymentInfo } from './updatePaymentInfo';
@@ -795,20 +700,8 @@ import { ViewEmailTemplate } from './viewEmailTemplate';
 import { ViewEmailTemplates } from './viewEmailTemplates';
 import { ViewEmailTemplatesData } from './viewEmailTemplatesData';
 import { ViewEmailTemplatesDataDataInner } from './viewEmailTemplatesDataDataInner';
-import { ViewFaxDeliveryReceiptRule } from './viewFaxDeliveryReceiptRule';
-import { ViewFaxDeliveryReceiptRules } from './viewFaxDeliveryReceiptRules';
-import { ViewFaxDeliveryReceiptRulesData } from './viewFaxDeliveryReceiptRulesData';
-import { ViewFaxHistory } from './viewFaxHistory';
-import { ViewFaxHistoryData } from './viewFaxHistoryData';
-import { ViewFaxInboundRule } from './viewFaxInboundRule';
-import { ViewFaxInboundRules } from './viewFaxInboundRules';
-import { ViewFaxInboundRulesData } from './viewFaxInboundRulesData';
-import { ViewFaxReceipts } from './viewFaxReceipts';
-import { ViewFaxReceiptsData } from './viewFaxReceiptsData';
 import { ViewInboundSms } from './viewInboundSms';
 import { ViewInboundSmsData } from './viewInboundSmsData';
-import { ViewLetterHistory } from './viewLetterHistory';
-import { ViewLetterHistoryData } from './viewLetterHistoryData';
 import { ViewListContacts } from './viewListContacts';
 import { ViewListContactsData } from './viewListContactsData';
 import { ViewLists } from './viewLists';
@@ -820,8 +713,6 @@ import { ViewMmsCampaign } from './viewMmsCampaign';
 import { ViewMmsHistory } from './viewMmsHistory';
 import { ViewMmsHistoryData } from './viewMmsHistoryData';
 import { ViewMmsHistoryDataAllOfDataInner } from './viewMmsHistoryDataAllOfDataInner';
-import { ViewPostcardHistory } from './viewPostcardHistory';
-import { ViewPostcardHistoryData } from './viewPostcardHistoryData';
 import { ViewRechargePackages } from './viewRechargePackages';
 import { ViewRechargePackagesData } from './viewRechargePackagesData';
 import { ViewRechargePackagesDataPackagesInner } from './viewRechargePackagesDataPackagesInner';
@@ -848,7 +739,6 @@ import { ViewSmsStatisticsDataTotal } from './viewSmsStatisticsDataTotal';
 import { ViewSmsTemplates } from './viewSmsTemplates';
 import { ViewSmsTemplatesData } from './viewSmsTemplatesData';
 import { ViewSpecificClientAccount } from './viewSpecificClientAccount';
-import { ViewSpecificFaxReceipt } from './viewSpecificFaxReceipt';
 import { ViewSpecificList } from './viewSpecificList';
 import { ViewSpecificReturnAddress } from './viewSpecificReturnAddress';
 import { ViewSpecificSmsCampaign } from './viewSpecificSmsCampaign';
@@ -939,19 +829,12 @@ let typeMap: {[index: string]: any} = {
     "CalculateEmailPrice": CalculateEmailPrice,
     "CalculateEmailPriceData": CalculateEmailPriceData,
     "CalculateEmailPriceRequest": CalculateEmailPriceRequest,
-    "CalculateFaxPrice": CalculateFaxPrice,
-    "CalculateFaxPriceRequest": CalculateFaxPriceRequest,
-    "CalculateFaxPriceRequestMessagesInner": CalculateFaxPriceRequestMessagesInner,
-    "CalculateLetterPrice": CalculateLetterPrice,
-    "CalculateLetterPriceData": CalculateLetterPriceData,
-    "CalculateLetterPriceRequest": CalculateLetterPriceRequest,
     "CalculateMmsCampaignPrice": CalculateMmsCampaignPrice,
     "CalculateMmsCampaignPriceData": CalculateMmsCampaignPriceData,
     "CalculateMmsCampaignPriceDataData": CalculateMmsCampaignPriceDataData,
     "CalculateMmsPrice": CalculateMmsPrice,
     "CalculateMmsPriceRequest": CalculateMmsPriceRequest,
     "CalculateMmsPriceRequestMessagesInner": CalculateMmsPriceRequestMessagesInner,
-    "CalculatePostcardPrice": CalculatePostcardPrice,
     "CalculateSmsCampaignPrice": CalculateSmsCampaignPrice,
     "CalculateSmsCampaignPriceData": CalculateSmsCampaignPriceData,
     "CalculateSmsCampaignPriceDataData": CalculateSmsCampaignPriceDataData,
@@ -975,8 +858,6 @@ let typeMap: {[index: string]: any} = {
     "CancelEmailCampaign": CancelEmailCampaign,
     "CancelEmailCampaignRequest": CancelEmailCampaignRequest,
     "CancelMmsCampaign": CancelMmsCampaign,
-    "CancelScheduledLetter": CancelScheduledLetter,
-    "CancelScheduledPostcard": CancelScheduledPostcard,
     "CancelSms": CancelSms,
     "CancelSmsCampaign": CancelSmsCampaign,
     "CancelVoiceMessage": CancelVoiceMessage,
@@ -995,10 +876,6 @@ let typeMap: {[index: string]: any} = {
     "CreateEmailDeliveryReceiptRule": CreateEmailDeliveryReceiptRule,
     "CreateEmailTemplate": CreateEmailTemplate,
     "CreateEmailTemplateRequest": CreateEmailTemplateRequest,
-    "CreateFaxDeliveryReceiptRule": CreateFaxDeliveryReceiptRule,
-    "CreateFaxDeliveryReceiptRuleRequest": CreateFaxDeliveryReceiptRuleRequest,
-    "CreateFaxInboundRule": CreateFaxInboundRule,
-    "CreateFaxInboundRuleRequest": CreateFaxInboundRuleRequest,
     "CreateList": CreateList,
     "CreateListRequest": CreateListRequest,
     "CreateNewContact": CreateNewContact,
@@ -1035,8 +912,6 @@ let typeMap: {[index: string]: any} = {
     "DeleteContact": DeleteContact,
     "DeleteEmailDeliveryReceiptRule": DeleteEmailDeliveryReceiptRule,
     "DeleteEmailTemplate": DeleteEmailTemplate,
-    "DeleteFaxDeliveryReceiptRule": DeleteFaxDeliveryReceiptRule,
-    "DeleteFaxInboundRule": DeleteFaxInboundRule,
     "DeleteList": DeleteList,
     "DeleteReturnAddress": DeleteReturnAddress,
     "DeleteSmsDeliveryReceiptRule": DeleteSmsDeliveryReceiptRule,
@@ -1046,22 +921,15 @@ let typeMap: {[index: string]: any} = {
     "DeleteSubaccount": DeleteSubaccount,
     "DeleteVoiceDeliveryReceiptRule": DeleteVoiceDeliveryReceiptRule,
     "DeliveryIssue": DeliveryIssue,
-    "DetectAddress": DetectAddress,
-    "DetectAddressData": DetectAddressData,
     "EmailAddress": EmailAddress,
     "EmailCampaign": EmailCampaign,
     "EmailCampaignHistory": EmailCampaignHistory,
     "EmailDeliveryReceiptRule": EmailDeliveryReceiptRule,
     "ExportEmailHistory": ExportEmailHistory,
-    "ExportLetterHistory": ExportLetterHistory,
     "ExportMmsHistory": ExportMmsHistory,
-    "ExportPostcardHistory": ExportPostcardHistory,
     "ExportSmsHistory": ExportSmsHistory,
     "ExportSmsHistoryData": ExportSmsHistoryData,
     "ExportVoiceHistory": ExportVoiceHistory,
-    "Fax": Fax,
-    "FaxDeliveryReceiptRule": FaxDeliveryReceiptRule,
-    "FaxReceipt": FaxReceipt,
     "ForgotPassword": ForgotPassword,
     "ForgotPasswordRequest": ForgotPasswordRequest,
     "ForgotUsername": ForgotUsername,
@@ -1090,7 +958,6 @@ let typeMap: {[index: string]: any} = {
     "ImportContacts": ImportContacts,
     "ImportContactsData": ImportContactsData,
     "ImportContactsRequest": ImportContactsRequest,
-    "InboundFaxRule": InboundFaxRule,
     "InboundSms": InboundSms,
     "InboundSmsTest": InboundSmsTest,
     "ListAlphaTags": ListAlphaTags,
@@ -1116,13 +983,10 @@ let typeMap: {[index: string]: any} = {
     "OwnNumber": OwnNumber,
     "Pagination": Pagination,
     "PostReturnAddress": PostReturnAddress,
-    "PostcardRecipient": PostcardRecipient,
-    "PostcardRecipientReturnAddress": PostcardRecipientReturnAddress,
     "PurchaseDedicatedNumber": PurchaseDedicatedNumber,
     "PurchaseDedicatedNumberData": PurchaseDedicatedNumberData,
     "PurchaseRechargePackage": PurchaseRechargePackage,
     "PurchaseRechargePackageData": PurchaseRechargePackageData,
-    "Recipient": Recipient,
     "RegisterNumbers": RegisterNumbers,
     "RegisterNumbersRequest": RegisterNumbersRequest,
     "RemoveDuplicateContacts": RemoveDuplicateContacts,
@@ -1154,23 +1018,12 @@ let typeMap: {[index: string]: any} = {
     "SendEmailVerificationTokenRequest": SendEmailVerificationTokenRequest,
     "SendEmailVerificationTokenRequestFrom": SendEmailVerificationTokenRequestFrom,
     "SendEmailVerificationTokenRequestToInner": SendEmailVerificationTokenRequestToInner,
-    "SendFax": SendFax,
-    "SendFaxData": SendFaxData,
-    "SendFaxRequest": SendFaxRequest,
-    "SendFaxRequestMessagesInner": SendFaxRequestMessagesInner,
-    "SendLetter": SendLetter,
-    "SendLetterData": SendLetterData,
-    "SendLetterRequest": SendLetterRequest,
     "SendMms": SendMms,
     "SendMmsCampaign": SendMmsCampaign,
     "SendMmsCampaignRequest": SendMmsCampaignRequest,
     "SendMmsData": SendMmsData,
     "SendMmsRequest": SendMmsRequest,
     "SendMmsRequestMessagesInner": SendMmsRequestMessagesInner,
-    "SendPostcard": SendPostcard,
-    "SendPostcardData": SendPostcardData,
-    "SendPostcardRequest": SendPostcardRequest,
-    "SendPostcardRequestRecipientsInner": SendPostcardRequestRecipientsInner,
     "SendSms": SendSms,
     "SendSmsCampaign": SendSmsCampaign,
     "SendSmsCampaignRequest": SendSmsCampaignRequest,
@@ -1204,9 +1057,6 @@ let typeMap: {[index: string]: any} = {
     "UpdateEmailDeliveryReceiptRule": UpdateEmailDeliveryReceiptRule,
     "UpdateEmailTemplate": UpdateEmailTemplate,
     "UpdateEmailTemplateRequest": UpdateEmailTemplateRequest,
-    "UpdateFaxDeliveryReceiptRule": UpdateFaxDeliveryReceiptRule,
-    "UpdateFaxDeliveryReceiptRuleRequest": UpdateFaxDeliveryReceiptRuleRequest,
-    "UpdateFaxInboundRule": UpdateFaxInboundRule,
     "UpdateList": UpdateList,
     "UpdateMmsCampaign": UpdateMmsCampaign,
     "UpdatePaymentInfo": UpdatePaymentInfo,
@@ -1265,20 +1115,8 @@ let typeMap: {[index: string]: any} = {
     "ViewEmailTemplates": ViewEmailTemplates,
     "ViewEmailTemplatesData": ViewEmailTemplatesData,
     "ViewEmailTemplatesDataDataInner": ViewEmailTemplatesDataDataInner,
-    "ViewFaxDeliveryReceiptRule": ViewFaxDeliveryReceiptRule,
-    "ViewFaxDeliveryReceiptRules": ViewFaxDeliveryReceiptRules,
-    "ViewFaxDeliveryReceiptRulesData": ViewFaxDeliveryReceiptRulesData,
-    "ViewFaxHistory": ViewFaxHistory,
-    "ViewFaxHistoryData": ViewFaxHistoryData,
-    "ViewFaxInboundRule": ViewFaxInboundRule,
-    "ViewFaxInboundRules": ViewFaxInboundRules,
-    "ViewFaxInboundRulesData": ViewFaxInboundRulesData,
-    "ViewFaxReceipts": ViewFaxReceipts,
-    "ViewFaxReceiptsData": ViewFaxReceiptsData,
     "ViewInboundSms": ViewInboundSms,
     "ViewInboundSmsData": ViewInboundSmsData,
-    "ViewLetterHistory": ViewLetterHistory,
-    "ViewLetterHistoryData": ViewLetterHistoryData,
     "ViewListContacts": ViewListContacts,
     "ViewListContactsData": ViewListContactsData,
     "ViewLists": ViewLists,
@@ -1290,8 +1128,6 @@ let typeMap: {[index: string]: any} = {
     "ViewMmsHistory": ViewMmsHistory,
     "ViewMmsHistoryData": ViewMmsHistoryData,
     "ViewMmsHistoryDataAllOfDataInner": ViewMmsHistoryDataAllOfDataInner,
-    "ViewPostcardHistory": ViewPostcardHistory,
-    "ViewPostcardHistoryData": ViewPostcardHistoryData,
     "ViewRechargePackages": ViewRechargePackages,
     "ViewRechargePackagesData": ViewRechargePackagesData,
     "ViewRechargePackagesDataPackagesInner": ViewRechargePackagesDataPackagesInner,
@@ -1318,7 +1154,6 @@ let typeMap: {[index: string]: any} = {
     "ViewSmsTemplates": ViewSmsTemplates,
     "ViewSmsTemplatesData": ViewSmsTemplatesData,
     "ViewSpecificClientAccount": ViewSpecificClientAccount,
-    "ViewSpecificFaxReceipt": ViewSpecificFaxReceipt,
     "ViewSpecificList": ViewSpecificList,
     "ViewSpecificReturnAddress": ViewSpecificReturnAddress,
     "ViewSpecificSmsCampaign": ViewSpecificSmsCampaign,

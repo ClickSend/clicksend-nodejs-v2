@@ -10,12 +10,8 @@ export * from './emailApi';
 import { EmailApi } from './emailApi';
 export * from './emailToSmsApi';
 import { EmailToSmsApi } from './emailToSmsApi';
-export * from './faxApi';
-import { FaxApi } from './faxApi';
 export * from './internationalMessagingApi';
 import { InternationalMessagingApi } from './internationalMessagingApi';
-export * from './lettersApi';
-import { LettersApi } from './lettersApi';
 export * from './listsApi';
 import { ListsApi } from './listsApi';
 export * from './managementApi';
@@ -30,8 +26,6 @@ export * from './numbersApi';
 import { NumbersApi } from './numbersApi';
 export * from './ownNumbersApi';
 import { OwnNumbersApi } from './ownNumbersApi';
-export * from './postcardsApi';
-import { PostcardsApi } from './postcardsApi';
 export * from './referralsApi';
 import { ReferralsApi } from './referralsApi';
 export * from './resellerApi';
@@ -67,4 +61,4 @@ export class HttpError extends Error {
 
 export { RequestFile } from '../model/models';
 
-export const APIS = [AddressesApi, AlphaTagsApi, ContactsApi, DefaultSendersApi, EmailApi, EmailToSmsApi, FaxApi, InternationalMessagingApi, LettersApi, ListsApi, ManagementApi, MessageDeliveryApi, MmsApi, MmsCampaignsApi, NumbersApi, OwnNumbersApi, PostcardsApi, ReferralsApi, ResellerApi, SmsApi, SmsCampaignsApi, StatisticsApi, SubaccountsApi, TransactionsApi, UploadsApi, UrlShorteningApi, VerificationApi, VoiceApi, VoiceMessagingApi];
+export const APIS = [AddressesApi, AlphaTagsApi, ContactsApi, DefaultSendersApi, EmailApi, EmailToSmsApi, InternationalMessagingApi, ListsApi, ManagementApi, MessageDeliveryApi, MmsApi, MmsCampaignsApi, NumbersApi, OwnNumbersApi, ReferralsApi, ResellerApi, SmsApi, SmsCampaignsApi, StatisticsApi, SubaccountsApi, TransactionsApi, UploadsApi, UrlShorteningApi, VerificationApi, VoiceApi, VoiceMessagingApi];
