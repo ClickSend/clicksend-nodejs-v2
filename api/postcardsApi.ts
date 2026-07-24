@@ -38,7 +38,7 @@ export enum PostcardsApiApiKeys {
 
 export class PostcardsApi {
     protected _basePath = defaultBasePath;
-    protected _defaultHeaders : any = {};
+    protected _defaultHeaders : any = { 'User-Agent': 'ClickSend-SDK/6.0.0/nodejs' };
     protected _useQuerystring : boolean = false;
 
     protected authentications = {
