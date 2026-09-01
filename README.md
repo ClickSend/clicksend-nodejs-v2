@@ -18,6 +18,8 @@ const smsApi = new SmsApi(
   process.env.CLICKSEND_API_KEY
 );
 
+// The first argument is the optional `contentType` header — pass `undefined` to use the default.
+// The request body is the second argument.
 smsApi.sendSms(undefined, {
   messages: [
     {
@@ -58,6 +60,7 @@ const mmsApi = new MmsApi(
   process.env.CLICKSEND_API_KEY
 );
 
+// As with `sendSms`, the first argument is the optional `contentType` header — pass `undefined`.
 mmsApi.sendMms(undefined, {
   mediaFile: 'https://clicksend.com/logo.png',
   messages: [
