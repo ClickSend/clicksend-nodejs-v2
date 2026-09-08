@@ -1,7 +1,7 @@
 {
     "name": "clicksend",
-    "version": "6.0.0",
-    "description": "NodeJS client for clicksend",
+    "version": "6.0.1",
+    "description": "Official ClickSend SDK for Node.js and TypeScript — send SMS, MMS, voice and email messages, run SMS and MMS campaigns, and manage numbers, contacts, subaccounts and reporting through the ClickSend REST API.",
     "repository": {
         "type": "git",
         "url": "https://github.com/ClickSend/clicksend-nodejs-v2.git"
@@ -13,7 +13,7 @@
         "build": "tsc",
         "test": "npm run build && node dist/client.js"
     },
-    "author": "OpenAPI-Generator Contributors",
+    "author": "ClickSend <support@clicksend.com> (https://clicksend.com)",
     "license": "MIT",
     "dependencies": {
         "bluebird": "^3.7.2",
@@ -24,5 +24,41 @@
         "@types/node": "^12",
         "@types/request": "^2.48.8",
         "typescript": "^4.0 || ^5.0"
+    },
+    "keywords": [
+        "clicksend",
+        "sms",
+        "sms api",
+        "send sms",
+        "bulk sms",
+        "text message",
+        "texting",
+        "mms",
+        "mms api",
+        "voice",
+        "voice call",
+        "text to speech",
+        "tts",
+        "ivr",
+        "email to sms",
+        "sms campaign",
+        "mms campaign",
+        "url shortening",
+        "number verification",
+        "messaging",
+        "notifications",
+        "otp",
+        "2fa",
+        "transactional sms",
+        "marketing sms",
+        "appointment reminders",
+        "alerts",
+        "rest api",
+        "nodejs",
+        "typescript"
+    ],
+    "homepage": "https://developers.clicksend.com/",
+    "bugs": {
+        "url": "https://github.com/ClickSend/clicksend-nodejs-v2/issues"
     }
 }
