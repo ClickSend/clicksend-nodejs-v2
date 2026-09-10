@@ -1,6 +1,6 @@
 # Migration Guide: clicksend-nodejs (legacy) → clicksend-nodejs-v2
 
-This guide helps you migrate from the legacy ClickSend Node.js SDK (generated with **swagger-codegen**) to the new v2 SDK (generated with **openapi-generator**). The two SDKs are **not drop-in compatible** — method names, request/response shapes, and a few internals have changed. Read this guide fully before upgrading, then use the class/method mapping tables to update your code.
+This guide helps you migrate from the legacy ClickSend Node.js SDK to the new v2 SDK. The two SDKs are **not drop-in compatible** — method names, request/response shapes, and a few internals have changed. Read this guide fully before upgrading, then use the class/method mapping tables to update your code.
 
 ## Table of contents
 
@@ -34,9 +34,9 @@ This guide helps you migrate from the legacy ClickSend Node.js SDK (generated wi
 
 ## 1. Why this migration isn't a drop-in replacement
 
-The legacy SDK was hand-maintained on top of a **swagger-codegen** template and grew organically: one API class per rough "concept" (e.g. `EmailMarketingApi`, `TransactionalEmailApi`, `MasterEmailTemplatesApi`, `UserEmailTemplatesApi`, `EmailDeliveryReceiptRulesApi` were five *separate* classes), method names followed a `resourcePathHttpVerb` pattern (`smsSendPost`, `smsHistoryGet`), and response bodies were never deserialized into real types (always typed `string`).
+The legacy SDK was generated from an older toolchain and grew organically: one API class per rough "concept" (e.g. `EmailMarketingApi`, `TransactionalEmailApi`, `MasterEmailTemplatesApi`, `UserEmailTemplatesApi`, `EmailDeliveryReceiptRulesApi` were five *separate* classes), method names followed a `resourcePathHttpVerb` pattern (`smsSendPost`, `smsHistoryGet`), and response bodies were never deserialized into real types (always typed `string`).
 
-The v2 SDK is generated fresh from ClickSend's OpenAPI 3 specification using **openapi-generator**, which:
+The v2 SDK is generated fresh from ClickSend's current API specification, which:
 
 - Groups methods into **one class per resource/tag** (26 classes instead of 36 — several legacy classes were merged, a couple were split, and the Fax, Letters, and Postcards classes were dropped entirely — see §13).
 - Names methods after the endpoint's **operationId** (`sendSms`, `viewSmsHistory`, `exportSmsHistory`) instead of `resource+verb`.
@@ -119,7 +119,7 @@ The final resolved URL is identical in both cases (`https://rest.clicksend.com/v
 
 ## 5. Method naming convention change
 
-Every method on every API class has been renamed. There is no shared prefix/suffix rule you can find-and-replace — the new names follow the OpenAPI spec's `operationId`, which reads like an English sentence, while the old ones followed `resourcePath` + HTTP verb.
+Every method on every API class has been renamed. There is no shared prefix/suffix rule you can find-and-replace — the new names follow each endpoint's `operationId`, which reads like an English sentence, while the old ones followed `resourcePath` + HTTP verb.
 
 Examples:
 
