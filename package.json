@@ -1,6 +1,6 @@
 {
     "name": "clicksend",
-    "version": "6.0.1",
+    "version": "6.0.2",
     "description": "Official ClickSend SDK for Node.js and TypeScript — send SMS, MMS, voice and email messages, run SMS and MMS campaigns, and manage numbers, contacts, subaccounts and reporting through the ClickSend REST API.",
     "repository": {
         "type": "git",

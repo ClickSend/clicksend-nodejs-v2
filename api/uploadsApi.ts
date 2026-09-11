@@ -32,7 +32,7 @@ export enum UploadsApiApiKeys {
 
 export class UploadsApi {
     protected _basePath = defaultBasePath;
-    protected _defaultHeaders : any = { 'User-Agent': 'ClickSend-SDK/6.0.1/nodejs' };
+    protected _defaultHeaders : any = { 'User-Agent': 'ClickSend-SDK/6.0.2/nodejs' };
     protected _useQuerystring : boolean = false;
 
     protected authentications = {
