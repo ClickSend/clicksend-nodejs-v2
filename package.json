@@ -1,29 +1,11 @@
 {
     "name": "clicksend",
-    "version": "6.0.2",
+    "version": "7.0.0",
     "description": "Official ClickSend SDK for Node.js and TypeScript — send SMS, MMS, voice and email messages, run SMS and MMS campaigns, and manage numbers, contacts, subaccounts and reporting through the ClickSend REST API.",
+    "author": "ClickSend <support@clicksend.com> (https://clicksend.com)",
     "repository": {
         "type": "git",
         "url": "https://github.com/ClickSend/clicksend-nodejs-v2.git"
-    },
-    "main": "dist/api.js",
-    "types": "dist/api.d.ts",
-    "scripts": {
-        "clean": "rm -Rf node_modules/ *.js",
-        "build": "tsc",
-        "test": "npm run build && node dist/client.js"
-    },
-    "author": "ClickSend <support@clicksend.com> (https://clicksend.com)",
-    "license": "MIT",
-    "dependencies": {
-        "bluebird": "^3.7.2",
-        "request": "^2.88.2"
-    },
-    "devDependencies": {
-        "@types/bluebird": "^3.5.33",
-        "@types/node": "^12",
-        "@types/request": "^2.48.8",
-        "typescript": "^4.0 || ^5.0"
     },
     "keywords": [
         "clicksend",
@@ -57,6 +39,20 @@
         "nodejs",
         "typescript"
     ],
+    "license": "MIT",
+    "main": "./dist/index.js",
+    "typings": "./dist/index.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "prepare": "npm run build"
+    },
+    "dependencies": {
+        "axios": ">=1.16.0 <1.19.0"
+    },
+    "devDependencies": {
+        "@types/node": "12.11.5 - 12.20.42",
+        "typescript": "^4.0 || ^5.0"
+    },
     "homepage": "https://developers.clicksend.com/",
     "bugs": {
         "url": "https://github.com/ClickSend/clicksend-nodejs-v2/issues"

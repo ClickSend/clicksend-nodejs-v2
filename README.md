@@ -23,7 +23,8 @@ This library is generated from ClickSend's official OpenAPI v3 specification and
 - **Account & billing** — account details, transactions, subaccounts, referrals, reseller accounts
 - **Delivery & reporting** — delivery receipts, inbound messages, statistics
 - **Extras** — URL shortening, file uploads, number verification, international messaging
-- **First-class TypeScript** — typed models for every request and response, `.d.ts` shipped in the package
+- **First-class TypeScript** — every method takes a single, fully-typed request-parameters object; typed models for every request and response, `.d.ts` shipped in the package
+- **Built on axios** — bring your own `AxiosInstance` for interceptors, proxies, retries, or custom transports
 - **HTTP Basic auth** with your ClickSend username and API key
 - **Identifiable traffic** — requests are sent with a `ClickSend-SDK/<version>/nodejs` `User-Agent` by default
 - MIT licensed
@@ -49,27 +50,33 @@ export CLICKSEND_API_KEY="your-api-key"
 
 ## Quickstart
 
+Every API class takes a `Configuration` instance holding your credentials. Every method takes a single request-parameters object — there's no positional `contentType` argument to remember or skip.
+
+> **Field names inside request/response bodies are `snake_case`** (e.g. `media_file`, `email_address_id`, `list_id`), matching the API's wire format exactly — they are **not** camelCased. Only the outer request-parameters object's own keys (the method's named arguments, like `sendSmsRequest` or `listId`) are camelCase. Check the TypeScript types (or the [API reference](https://developers.clicksend.com/docs/rest/v3/)) for the exact field name rather than guessing.
+
 ```typescript
-import { SmsApi } from 'clicksend';
+import { Configuration, SmsApi } from 'clicksend';
 
-const smsApi = new SmsApi(
-  process.env.CLICKSEND_USERNAME,
-  process.env.CLICKSEND_API_KEY
-);
-
-// The first argument is the optional `contentType` header — pass `undefined` to use the default.
-// The request body is the second argument.
-smsApi.sendSms(undefined, {
-  messages: [
-    {
-      source: 'sdk',
-      body: 'Hello from ClickSend!',
-      to: '+61411111111',
-    },
-  ],
-}).then(({ body }) => {
-  console.log(body);
+const configuration = new Configuration({
+  username: process.env.CLICKSEND_USERNAME,
+  password: process.env.CLICKSEND_API_KEY,
 });
+
+const smsApi = new SmsApi(configuration);
+
+const { data } = await smsApi.sendSms({
+  sendSmsRequest: {
+    messages: [
+      {
+        source: 'sdk',
+        body: 'Hello from ClickSend!',
+        to: '+61411111111',
+      },
+    ],
+  },
+});
+
+console.log(data);
 ```
 
 ## More Examples
@@ -77,80 +84,90 @@ smsApi.sendSms(undefined, {
 ### View account details
 
 ```typescript
-import { ManagementApi } from 'clicksend';
+import { Configuration, ManagementApi } from 'clicksend';
 
-const managementApi = new ManagementApi(
-  process.env.CLICKSEND_USERNAME,
-  process.env.CLICKSEND_API_KEY
-);
-
-managementApi.viewAccountDetails().then(({ body }) => {
-  console.log(body);
+const configuration = new Configuration({
+  username: process.env.CLICKSEND_USERNAME,
+  password: process.env.CLICKSEND_API_KEY,
 });
+
+const managementApi = new ManagementApi(configuration);
+
+const { data } = await managementApi.viewAccountDetails();
+console.log(data);
 ```
 
 ### Send an MMS
 
 ```typescript
-import { MmsApi } from 'clicksend';
+import { Configuration, MmsApi } from 'clicksend';
 
-const mmsApi = new MmsApi(
-  process.env.CLICKSEND_USERNAME,
-  process.env.CLICKSEND_API_KEY
-);
-
-// As with `sendSms`, the first argument is the optional `contentType` header — pass `undefined`.
-mmsApi.sendMms(undefined, {
-  mediaFile: 'https://clicksend.com/logo.png',
-  messages: [
-    {
-      to: '+61411111111',
-      from: 'sdk',
-      subject: 'Hello',
-      body: 'Hello from ClickSend!',
-      source: 'sdk',
-    },
-  ],
-}).then(({ body }) => {
-  console.log(body);
+const configuration = new Configuration({
+  username: process.env.CLICKSEND_USERNAME,
+  password: process.env.CLICKSEND_API_KEY,
 });
+
+const mmsApi = new MmsApi(configuration);
+
+const { data } = await mmsApi.sendMms({
+  sendMmsRequest: {
+    media_file: 'https://clicksend.com/logo.png',
+    messages: [
+      {
+        to: '+61411111111',
+        from: 'sdk',
+        subject: 'Hello',
+        body: 'Hello from ClickSend!',
+        source: 'sdk',
+      },
+    ],
+  },
+});
+
+console.log(data);
 ```
 
 ## Configuration
 
 ```typescript
-import { SmsApi } from 'clicksend';
+import axios from 'axios';
+import { Configuration, SmsApi } from 'clicksend';
 
-// Optional third argument overrides the API base URL (default: https://rest.clicksend.com).
-const smsApi = new SmsApi(
-  process.env.CLICKSEND_USERNAME,
-  process.env.CLICKSEND_API_KEY,
-  'https://rest.clicksend.com'
-);
-
-// Add headers sent on every request from this client.
-smsApi.defaultHeaders = { 'X-My-Header': 'value' };
-
-// Inspect or mutate every outgoing request (logging, tracing, custom auth).
-smsApi.addInterceptor((requestOptions) => {
-  console.log(requestOptions.method, requestOptions.uri);
+const configuration = new Configuration({
+  username: process.env.CLICKSEND_USERNAME,
+  password: process.env.CLICKSEND_API_KEY,
+  // Override the API base URL (default: https://rest.clicksend.com).
+  basePath: 'https://rest.clicksend.com',
+  // Headers sent on every request from this client.
+  baseOptions: { headers: { 'X-My-Header': 'value' } },
 });
+
+// Bring your own axios instance for interceptors, proxies, retries, etc.
+const axiosInstance = axios.create();
+axiosInstance.interceptors.request.use((config) => {
+  console.log(config.method, config.url);
+  return config;
+});
+
+const smsApi = new SmsApi(configuration, undefined, axiosInstance);
 ```
 
-Each API method also accepts a final `options` argument for per-call overrides, e.g. `{ headers: { ... } }`.
+Each API method also accepts a final `options` argument (an `AxiosRequestConfig`) for per-call overrides, e.g. `{ headers: { ... } }`.
 
 ## Error Handling
 
-API calls return a promise that resolves to `{ response, body }` and rejects with an `HttpError` on non-2xx responses:
+Every method returns a promise that resolves to an `AxiosResponse` (`.data`, `.status`, `.headers`) and rejects with an `AxiosError` on non-2xx responses:
 
 ```typescript
 try {
-  const { body } = await smsApi.sendSms(undefined, { messages: [/* ... */] });
-  console.log(body);
+  const { data } = await smsApi.sendSms({ sendSmsRequest: { messages: [/* ... */] } });
+  console.log(data);
 } catch (err) {
-  // err.statusCode — HTTP status code
-  // err.body       — parsed error payload from the API
-  console.error(err.statusCode, err.body);
+  if (axios.isAxiosError(err)) {
+    console.error(err.response?.status, err.response?.data); // HTTP status + parsed error payload
+  } else {
+    throw err;
+  }
 }
 ```
 
